@@ -1,8 +1,8 @@
 # Modh Agent Skills
 
-Battle-tested AI coding agent skills, consolidated from production SaaS development. 17 portable skills across architecture, design, backend, and workflow — compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+Battle-tested AI coding agent skills, consolidated from production SaaS development. 18 portable skills across architecture, design, backend, and workflow — compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
-**Why this exists:** After building with AI agents across multiple projects, we found ourselves recreating the same patterns, rules, and guardrails. We had 40+ skills — many redundant, most project-specific. We consolidated them into 17 framework-agnostic skills that encode our best engineering practices without being tied to any single codebase.
+**Why this exists:** After building with AI agents across multiple projects, we found ourselves recreating the same patterns, rules, and guardrails. We had 40+ skills — many redundant, most project-specific. We consolidated them into 18 framework-agnostic skills that encode our best engineering practices without being tied to any single codebase.
 
 ## Quick Start
 
@@ -27,7 +27,7 @@ your-project/
 │   ├── design-taste/             → .agents/modh-skills/skills/design-taste (symlink)
 │   ├── react-architecture/       → .agents/modh-skills/skills/react-architecture (symlink)
 │   ├── observability/            → .agents/modh-skills/skills/observability (symlink)
-│   ├── ...                       → (17 skills total)
+│   ├── ...                       → (18 skills total)
 │   └── my-custom-skill/          ← Your own project-specific skill (untouched)
 ├── AGENTS.md                     ← Created if missing (from template)
 └── CLAUDE.md                     ← Created if missing ("@AGENTS.md")
@@ -68,6 +68,7 @@ install.sh **never overwrites** existing local skill directories or files.
 
 | Skill | When It Activates | What It Does |
 |-------|------------------|--------------|
+| [`doc-audit`](skills/doc-audit/) | Auditing docs, adding features, before shipping | Three-layer doc system (README + AGENTS.md + CLAUDE.md), coverage reports, staleness detection, gap generation |
 | [`feature-design`](skills/feature-design/) | Starting new features | Interactive brainstorming, 2-3 approach proposals, design specs before implementation |
 | [`linear-tickets`](skills/linear-tickets/) | Creating issues or tickets | Rich tickets with user stories, architecture context, acceptance criteria, sub-task breakdown |
 | [`pull-request`](skills/pull-request/) | Creating PRs | CI validation first, rich descriptions with summary + test plan |

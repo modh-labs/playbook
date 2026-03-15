@@ -27,7 +27,7 @@ echo ""
 TIER_UNIVERSAL=(design-taste internal-tools-design output-enforcement cross-editor-setup)
 TIER_REACT=(react-architecture nextjs-patterns shadcn-components)
 TIER_BACKEND=(supabase-patterns observability webhook-architecture security-and-compliance testing)
-TIER_PROCESS=(feature-design linear-tickets pull-request ci-pipeline route-colocation)
+TIER_PROCESS=(doc-audit feature-design linear-tickets pull-request ci-pipeline route-colocation)
 
 # Parse flags
 ALL_AGENTS=false
