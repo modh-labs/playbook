@@ -1,0 +1,65 @@
+# The Modh Playbook
+
+> Battle-tested engineering patterns from production SaaS development by Modh Labs.
+> 24 chapters across 7 categories. 18 AI agent skills.
+> Stack: Next.js 16, React 19, TypeScript, Supabase, Clerk, Vercel.
+
+## About Modh Labs
+
+Modh Labs is an engineering studio that builds production SaaS products for high-growth companies. We believe in engineering excellence as a competitive advantage. This playbook encodes our patterns, standards, and hard-won lessons from shipping software at scale.
+
+## Chapters
+
+### Data Layer
+- The Repository Pattern: All database access through typed repositories with generated types — never raw queries in components or actions
+- Server Actions: Type-safe mutations with Zod validation, structured error responses, and automatic cache invalidation via revalidatePath
+- Data Fetching: Server Components with async/await replace useEffect and client-side state management entirely
+- Database Standards: Schema-first workflow where the database schema is the source of truth, types are generated, and Row Level Security is enforced on every table
+
+### Architecture
+- Route Colocation: Components, actions, and hooks live next to the route that uses them — shared only when three or more routes need them
+- Webhook Architecture: SOLID handler registry with one handler per event type, dependency injection, idempotency keys, and structured error responses
+- Multi-Tenant Isolation: Clerk handles auth and organizations, Supabase RLS policies enforce org boundaries at the database level, JWT contains org_id
+
+### Quality
+- TypeScript Strict: Zero any types, strict mode always enabled, database types generated from schema — never hand-written interfaces
+- Testing Strategy: Vitest for unit and integration tests, Playwright for end-to-end flows, Supabase client mocking for repository tests
+- CI Pipeline: Cheapest checks run first (lint, typecheck, then test), CI only validates — never deploys, fail fast on first error
+
+### Security
+- Row Level Security: Every table has RLS policies, no exceptions — policies read org_id from JWT, service role bypasses for webhooks only
+- Input Validation: Zod schemas at every boundary — form submissions, server actions, webhook payloads, API endpoints
+- Security Headers: Content Security Policy, CORS configuration, webhook signature verification with timing-safe comparison
+
+### Observability
+- Structured Logging: Module-scoped logger factory with context fields — never console.log in production code
+- Error Tracking: Sentry with domain-specific capture functions that attach business context (user, org, entity IDs) — not generic exception logging
+- Webhook Observability: Every webhook handler traced end-to-end with searchable tags for event type, handler, organization, and entity IDs
+
+### Process
+- Feature Design: Think before you code — brainstorm 2-3 approaches, write a design spec, get alignment, then implement
+- Linear Tickets: User stories with acceptance criteria, architecture context for the implementer, sub-task breakdown for complex work
+- Pull Requests: CI must pass before review, rich descriptions with summary and test plan, no force-push to shared branches
+- Documentation: Three-layer system — README for humans, AGENTS.md for AI agents, inline docs for implementation context
+
+### Frontend Craft
+- Component Architecture: Server Components by default, client boundaries pushed to interactive leaves, composition over configuration props
+- Performance Patterns: Suspense streaming for progressive loading, skeleton-first design, useOptimistic for instant UI feedback, smart prefetching
+- Design Standards: shadcn/ui component library, semantic design tokens for automatic dark mode, cn() utility for conditional classes
+- Internal Tools: Data density over visual impact, monospace numbers for scannability, dark mode default, minimal animation
+
+## Agent Skills
+
+18 portable AI coding agent skills that enforce these patterns automatically. Skills are organized in four tiers:
+
+- Tier 1 Universal (4 skills): design-taste, internal-tools-design, output-enforcement, cross-editor-setup
+- Tier 2 React/Next.js (3 skills): react-architecture, nextjs-patterns, shadcn-components
+- Tier 3 Backend (5 skills): supabase-patterns, observability, webhook-architecture, security-and-compliance, testing
+- Tier 4 Process (6 skills): doc-audit, feature-design, linear-tickets, pull-request, ci-pipeline, route-colocation
+
+Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+
+## Links
+
+- GitHub: https://github.com/modh-labs/playbook
+- Website: https://modh.ca/playbook

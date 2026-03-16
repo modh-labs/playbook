@@ -1,41 +1,101 @@
-# Modh Agent Skills
+# The Modh Playbook
 
-Battle-tested AI coding agent skills, consolidated from production SaaS development. 18 portable skills across architecture, design, backend, and workflow — compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+> How Modh Labs builds production software. Battle-tested patterns, standards, and AI agent skills from shipping SaaS at scale.
 
-**Why this exists:** After building with AI agents across multiple projects, we found ourselves recreating the same patterns, rules, and guardrails. We had 40+ skills — many redundant, most project-specific. We consolidated them into 18 framework-agnostic skills that encode our best engineering practices without being tied to any single codebase.
+This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
+
+24 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 18 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
 ```bash
 # Add to your project as a git submodule
-git submodule add https://github.com/modh-labs/agent-skills .agents/modh-skills
+git submodule add https://github.com/modh-labs/playbook .agents/modh-playbook
 
 # Install skills (creates symlinks into .claude/skills/)
-./.agents/modh-skills/install.sh
+./.agents/modh-playbook/install.sh
 ```
 
-That's it. Claude Code and Cursor will auto-discover the skills immediately.
+## The Chapters
 
-> **New to agent skills?** See [What Are Agent Skills?](docs/what-are-agent-skills.md) for background on how AI agents use skills to write better code.
+### 1. Data Layer
 
-## What Happens After Install
+How we access, mutate, and think about data. No raw queries. No client-side fetching. Type-safe from database to UI.
 
-```
-your-project/
-├── .agents/modh-skills/          ← Git submodule (this repo)
-├── .claude/skills/
-│   ├── design-taste/             → .agents/modh-skills/skills/design-taste (symlink)
-│   ├── react-architecture/       → .agents/modh-skills/skills/react-architecture (symlink)
-│   ├── observability/            → .agents/modh-skills/skills/observability (symlink)
-│   ├── ...                       → (18 skills total)
-│   └── my-custom-skill/          ← Your own project-specific skill (untouched)
-├── AGENTS.md                     ← Created if missing (from template)
-└── CLAUDE.md                     ← Created if missing ("@AGENTS.md")
-```
+| Chapter | Core Idea |
+|---------|-----------|
+| [The Repository Pattern](chapters/01-data-layer/repository-pattern.md) | Why we never write raw database queries |
+| [Server Actions](chapters/01-data-layer/server-actions.md) | Type-safe mutations that just work |
+| [Data Fetching](chapters/01-data-layer/data-fetching.md) | Server Components changed everything |
+| [Database Standards](chapters/01-data-layer/database-standards.md) | Schema-first, types-generated, RLS-enforced |
 
-install.sh **never overwrites** existing local skill directories or files.
+### 2. Architecture
 
-## Skills Reference
+How we structure applications. Routes own their code. Dependencies point inward. Webhooks are first-class citizens.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [Route Colocation](chapters/02-architecture/route-colocation.md) | Files live next to the route that uses them |
+| [Webhook Architecture](chapters/02-architecture/webhook-architecture.md) | One handler per event, SOLID registry, idempotency |
+| [Multi-Tenant Isolation](chapters/02-architecture/multi-tenant-isolation.md) | RLS enforces org boundaries at the database level |
+
+### 3. Quality
+
+How we keep code correct. Types catch bugs at compile time. Tests catch bugs at merge time. Linters catch bugs before you finish typing.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [TypeScript Strict](chapters/03-quality/typescript-strict.md) | Zero `any`, generated types, strict mode always on |
+| [Testing Strategy](chapters/03-quality/testing-strategy.md) | Vitest for units, Playwright for flows, mocks for Supabase |
+| [CI Pipeline](chapters/03-quality/ci-pipeline.md) | Cheapest checks first, no deploy in CI, fail fast |
+
+### 4. Security
+
+How we protect data. RLS is not optional. Validation happens at every boundary. Secrets never touch client code.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [Row Level Security](chapters/04-security/row-level-security.md) | Every table has RLS policies, no exceptions |
+| [Input Validation](chapters/04-security/input-validation.md) | Zod schemas at every boundary — forms, actions, webhooks |
+| [Security Headers](chapters/04-security/security-headers.md) | CSP, CORS, and webhook signature verification |
+
+### 5. Observability
+
+How we understand what is happening in production. Structured logs. Distributed traces. Domain-specific captures. No `console.log`.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [Structured Logging](chapters/05-observability/structured-logging.md) | Module loggers with context, never console.log |
+| [Error Tracking](chapters/05-observability/error-tracking.md) | Sentry with domain captures, not generic exceptions |
+| [Webhook Observability](chapters/05-observability/webhook-observability.md) | Every webhook traced end-to-end with searchable tags |
+
+### 6. Process
+
+How we work as a team. Features start with design, not code. Tickets have acceptance criteria. PRs tell a story.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [Feature Design](chapters/06-process/feature-design.md) | Think before you code — 2-3 approaches, then decide |
+| [Linear Tickets](chapters/06-process/linear-tickets.md) | User stories, architecture context, sub-task breakdown |
+| [Pull Requests](chapters/06-process/pull-requests.md) | CI passes first, then a rich description with test plan |
+| [Documentation](chapters/06-process/documentation.md) | Three layers — README, AGENTS.md, inline docs |
+
+### 7. Frontend Craft
+
+How we build interfaces. Server Components by default. Client boundaries pushed to the leaves. Every interaction feels instant.
+
+| Chapter | Core Idea |
+|---------|-----------|
+| [Component Architecture](chapters/07-frontend-craft/component-architecture.md) | Composition over configuration, colocation over abstraction |
+| [Performance Patterns](chapters/07-frontend-craft/performance-patterns.md) | Suspense, streaming, and instant UI feedback |
+| [Design Standards](chapters/07-frontend-craft/design-standards.md) | shadcn/ui, semantic tokens, premium by default |
+| [Internal Tools](chapters/07-frontend-craft/internal-tools.md) | Data density over visual impact, scannability first |
+
+---
+
+## Agent Skills
+
+18 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -75,89 +135,18 @@ install.sh **never overwrites** existing local skill directories or files.
 | [`ci-pipeline`](skills/ci-pipeline/) | Modifying CI/CD | CI checks only (no deploy), cheapest-first ordering, extensible step pattern |
 | [`route-colocation`](skills/route-colocation/) | Creating routes, organizing files | Colocate with routes, share at 3+ usages, actions folder pattern |
 
-## Usage Examples
+---
 
-### In Claude Code
+## Install
 
-Skills activate automatically based on what you're doing. You can also invoke them directly:
-
-```bash
-# Skills auto-activate when context matches
-> "Build a dashboard for order management"
-# → design-taste + internal-tools-design + shadcn-components activate
-
-# Or invoke directly with /skill-name
-> /design-taste
-> /react-architecture
-```
-
-**Example: Claude Code detects a bloated component**
-
-```
-You: "Refactor this UserProfile component, it's 800 lines"
-
-Claude: I'll use the react-architecture skill to decompose this.
-
-Based on the decomposition signals:
-- File length: 800 lines (threshold: >500 → mandatory split)
-- useState count: 22 (threshold: >15 → group into hooks)
-- useEffect count: 7 (threshold: >4 → each effect owns one concern)
-
-Extracting these hooks:
-- useUserProfile() → profile state + fetch effect
-- useNotifications() → notification state + polling effect
-- useFormValidation() → form state + validation logic
-...
-```
-
-**Example: Design taste catching AI slop**
-
-```
-You: "Create a landing page hero section"
-
-Claude: Using design-taste skill (DESIGN_VARIANCE: 8).
-
-Anti-center bias active — centered hero sections are banned
-at this variance level. Using split-screen layout instead.
-
-Checking AI tells:
-✗ Inter font → switching to Geist
-✗ Purple gradient accent → using Zinc base + Emerald accent
-✗ 3-column feature cards → using asymmetric 2-column zig-zag
-...
-```
-
-### In Cursor
-
-1. **Enable skills:** Settings > Rules > toggle "Import Agent Skills"
-2. Skills are automatically loaded from `.claude/skills/` (same path, same format)
-3. Cursor reads the `description` field in SKILL.md frontmatter to decide when to activate
-
-### In GitHub Copilot
+### Full Install (All Skills)
 
 ```bash
-# Generate Copilot instructions from your AGENTS.md
-./.agents/modh-skills/install.sh . --all-agents
-# Creates .github/copilot-instructions.md
+git submodule add https://github.com/modh-labs/playbook .agents/modh-playbook
+./.agents/modh-playbook/install.sh
 ```
 
-Copilot reads `AGENTS.md` at the project root and `.github/copilot-instructions.md` for workspace-level instructions.
-
-### In Windsurf
-
-```bash
-# Generate Windsurf rules
-./.agents/modh-skills/install.sh . --all-agents
-# Creates .windsurfrules
-```
-
-### In OpenAI Codex
-
-Codex reads `AGENTS.md` natively — no extra setup needed after install.
-
-## Selective Install
-
-Install only the skill tiers your project needs:
+### Selective Install
 
 ```bash
 # Just universal skills (works with any stack)
@@ -169,215 +158,25 @@ Install only the skill tiers your project needs:
 # Backend only
 ./install.sh . --tier=backend
 
-# Everything (default)
-./install.sh .
-
 # Everything + generate configs for all agents
 ./install.sh . --all-agents
 ```
 
-**Tier contents:**
-
-| Tier | Skills | Best For |
-|------|--------|----------|
-| `universal` | design-taste, internal-tools-design, output-enforcement, cross-editor-setup | Any project |
-| `react` | react-architecture, nextjs-patterns, shadcn-components | React / Next.js apps |
-| `backend` | supabase-patterns, observability, webhook-architecture, security-and-compliance, testing | Supabase / Node.js backends |
-| `process` | feature-design, linear-tickets, pull-request, ci-pipeline, route-colocation | Team workflows |
-
-## How Skills Work
-
-### Anatomy of a Skill
-
-```
-design-taste/
-├── SKILL.md              ← Loaded into agent context (<500 lines)
-│                           Contains rules, patterns, anti-patterns
-│                           Agent follows these while writing code
-│
-├── references/            ← Loaded on-demand when SKILL.md says "See references/X.md"
-│   ├── creative-arsenal.md   Deep techniques library
-│   └── design-audit.md       Full audit checklist
-│
-└── examples/              ← Optional, project-specific
-    └── your-examples.md      Replace with your own
-```
-
-### SKILL.md Format
-
-Every skill uses YAML frontmatter compatible with Claude Code, Cursor, and the AAIF standard:
-
-```yaml
----
-name: design-taste                    # Must match directory name
-description: >                        # Keyword-rich — agents match on this
-  Senior UI/UX design standards. Anti-AI pattern detection,
-  typography rules, color calibration, performance guardrails.
-  Use when building or reviewing any user-facing interface.
----
-
-# Design Taste
-
-## Core Rules
-...
-```
-
-### Progressive Loading
-
-Agents don't load all 17 skills at once. The process is:
-
-1. **Startup:** Agent reads only `name` + `description` from each SKILL.md frontmatter
-2. **Matching:** When your task matches a skill's description, the full SKILL.md is loaded
-3. **Deep dive:** If the skill references `references/X.md`, those load only when needed
-
-This keeps context windows lean — typically 1-3 skills active at a time.
-
-## Updating Skills
+### Updating
 
 ```bash
-cd .agents/modh-skills && git pull
+cd .agents/modh-playbook && git pull
 ```
 
-Because install.sh creates **symlinks** (not copies), pulling updates to the submodule immediately updates all skills. No reinstall needed.
+Because install.sh creates symlinks (not copies), pulling updates to the submodule immediately updates all skills. No reinstall needed.
 
-## Adding Your Own Skills
-
-Your project can have local skills alongside the Modh pack:
-
-```
-.claude/skills/
-├── design-taste/             → symlink (Modh pack)
-├── react-architecture/       → symlink (Modh pack)
-├── billing-patterns/         ← Your local skill
-│   └── SKILL.md
-└── my-api-integration/       ← Your local skill
-    ├── SKILL.md
-    └── references/
-        └── api-docs.md
-```
-
-**To create a new skill:**
-
-```bash
-mkdir -p .claude/skills/my-skill
-cat > .claude/skills/my-skill/SKILL.md << 'EOF'
----
-name: my-skill
-description: >
-  When this skill activates and what it does.
-  Use keyword-rich descriptions for better agent matching.
 ---
 
-# My Skill
+## About
 
-## Core Rules
-1. Rule one
-2. Rule two
+These are the patterns we actually use at [Modh Labs](https://modh.ca). They have been refined through building production SaaS products — finding what works, what the AI keeps getting wrong, and encoding those lessons so we do not repeat ourselves.
 
-## Anti-Patterns
-| Pattern | Why It's Wrong | Do This Instead |
-|---------|---------------|-----------------|
-| ... | ... | ... |
-EOF
-```
-
-## Writing Good Skills
-
-See [docs/writing-skills.md](docs/writing-skills.md) for the complete guide. Key principles:
-
-- **Under 500 lines** — SKILL.md is loaded into the agent's context window. Every line costs tokens.
-- **Tables over prose** — `| Pattern | Fix |` is ~3x more token-efficient than paragraph explanations.
-- **Rules, not suggestions** — "NEVER use console.log" beats "Consider using a structured logger".
-- **Anti-patterns with fixes** — Show the wrong way AND the right way side by side.
-- **Decision trees over paragraphs** — `Error in webhook? → use captureException()` beats a paragraph.
-- **No project-specific references** — Use generic paths like `@/lib/` not `@/app/_shared/lib/`.
-- **Reference files for depth** — Keep SKILL.md sharp; put full templates in `references/`.
-
-## Architecture
-
-```
-How skills flow from this repo to your AI agents:
-
-┌─────────────────────────────┐
-│  modh-labs/agent-skills      │  ← This repo (git submodule)
-│  └── skills/                 │
-│      ├── design-taste/       │
-│      ├── react-architecture/ │
-│      └── ...                 │
-└──────────────┬──────────────┘
-               │ install.sh creates symlinks
-               ▼
-┌─────────────────────────────┐
-│  your-project/               │
-│  ├── .claude/skills/         │  ← Symlinks to submodule
-│  │   ├── design-taste/ →     │
-│  │   └── ...                 │
-│  ├── AGENTS.md               │  ← Project rules (all agents read)
-│  └── CLAUDE.md               │  ← "@AGENTS.md" (Claude Code entry)
-└──────────────┬──────────────┘
-               │ Agents read .claude/skills/ + AGENTS.md
-               ▼
-┌─────────────────────────────┐
-│  AI Agents                   │
-│  ├── Claude Code ✓           │
-│  ├── Cursor ✓                │
-│  ├── GitHub Copilot ✓        │
-│  ├── Windsurf ✓              │
-│  └── OpenAI Codex ✓          │
-└─────────────────────────────┘
-```
-
-## FAQ
-
-**Q: Do I need Claude Code to use this?**
-No. The skills work with any agent that reads `.claude/skills/` (Claude Code, Cursor) or `AGENTS.md` (Copilot, Codex, Windsurf). The `--all-agents` flag generates config files for non-Claude agents.
-
-**Q: Will this slow down my agent?**
-No. Skills use progressive loading — only the name and description are read at startup (~1 line each). The full skill loads only when the agent's task matches. Typical usage: 1-3 skills active at a time.
-
-**Q: Can I override a skill for my project?**
-Yes. Delete the symlink and create a local directory with the same name. install.sh never overwrites existing directories.
-
-**Q: How do I add a skill to the pack?**
-See [docs/contributing.md](docs/contributing.md). Fork, add your skill following the structure, and submit a PR.
-
-**Q: What's the difference between skills and AGENTS.md?**
-AGENTS.md contains project-level rules that are always loaded (tech stack, critical rules, file structure). Skills are specialized knowledge that loads on-demand when relevant to the current task.
-
-**Q: Can I use this with a non-TypeScript project?**
-Yes. Tier 1 (universal) and Tier 4 (process) skills are language-agnostic. Tier 2 (React) and Tier 3 (backend) are TypeScript/Supabase-focused but the patterns transfer to other stacks.
-
-## Stats
-
-| Metric | Value |
-|--------|-------|
-| Total skills | 17 |
-| SKILL.md total lines | ~5,000 |
-| Reference docs | 14 |
-| Average skill size | 297 lines |
-| Largest skill | shadcn-components (452 lines) |
-| Smallest skill | output-enforcement (49 lines) |
-| Aura-specific references | 0 |
-| Compatible agents | 5+ |
-
-## About This Pack
-
-These are the skills I actually use across my projects at [Modh Labs](https://github.com/modh-labs). They've been refined through building production SaaS apps — finding what works, what the AI keeps getting wrong, and encoding those lessons so I don't have to repeat myself.
-
-I'm sharing them because I think they're useful. Take what works for you, ignore what doesn't. Your mileage may vary — every project is different, and these skills encode *my* opinions about how code should be written. They're strong opinions, loosely held.
-
-### Inspiration & Credit
-
-These skills didn't come out of nowhere. A lot of the ideas, patterns, and structures were inspired by excellent work from the open-source community:
-
-- **[Antiprompts / High-Agency Frontend Skill](https://github.com/sickn33/antiprompts-high-agency-frontend-skill)** by sickn33 — The tunable dials system, AI pattern detection, and Creative Arsenal concepts in `design-taste` draw heavily from this. Genuinely one of the best frontend skills out there.
-- **[Superpowers Skills](https://github.com/superpowers-ai/superpowers)** — The brainstorming, TDD, debugging, and planning workflow skills that shaped how `feature-design` and our overall process skills work. We keep superpowers as a separate global install and recommend you do too.
-- **[Vercel Engineering Skills](https://github.com/nicepkg/agent-skills)** — React composition patterns, performance optimization rules, and best practices that informed `react-architecture` and `nextjs-patterns`.
-- **[Supabase Postgres Best Practices](https://github.com/nicepkg/agent-skills)** — RLS patterns and query optimization that shaped `supabase-patterns`.
-- **[AGENTS.md Standard](https://agents.md/)** (AAIF / Linux Foundation) — The cross-editor configuration conventions behind `cross-editor-setup`.
-- **[Anthropic](https://anthropic.com)** — For Claude Code and the SKILL.md framework that makes all of this possible.
-
-The consolidated skills in this repo merge ideas from multiple sources, add patterns from our own production experience, and generalize everything for portability. The foundational ideas belong to their original creators — we just stitched together the best parts and pressure-tested them in real projects.
+We are sharing them because we think they are useful. Take what works for you, ignore what does not.
 
 ## License
 

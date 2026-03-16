@@ -1,0 +1,401 @@
+# The Modh Playbook — Full Reference
+
+> Complete engineering playbook from Modh Labs. 24 chapters, 18 AI agent skills.
+> Stack: Next.js 16, React 19, TypeScript strict, Supabase (PostgreSQL + RLS), Clerk auth, Vercel deployment.
+> This document is optimized for AI model consumption. It describes every pattern in enough detail to apply it.
+
+---
+
+## About Modh Labs
+
+Modh Labs is an engineering studio that builds production SaaS products. We ship multi-tenant applications with real-time collaboration, AI-powered features, and complex billing. This playbook encodes the patterns we use every day — not theoretical best practices, but battle-tested decisions from production codebases serving real users.
+
+Our core beliefs: engineering excellence is a competitive advantage. Types catch bugs cheaper than tests. Tests catch bugs cheaper than users. AI agents should enforce patterns, not just generate code.
+
+---
+
+## Chapter 1: Data Layer
+
+### The Repository Pattern
+
+Every database query goes through a typed repository function. Components and server actions never call `supabase.from()` directly. Repositories create the Supabase client internally, enforce Row Level Security through the authenticated client, and return fully typed results using generated database types.
+
+This creates a single source of truth for all data access. When a query needs to change, there is one place to update it. When RLS policies change, every consumer benefits automatically. Repositories use `select *` to maintain type safety with the generated types — column-picking creates drift between the TypeScript type and the actual query.
+
+```typescript
+// repositories/orders.repository.ts
+import { createClient } from '@/lib/supabase/server';
+import type { Database } from '@/types/database.types';
+
+type Order = Database['public']['Tables']['orders']['Row'];
+
+export async function getOrders(): Promise<Order[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('orders')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+
+export async function getOrderById(id: string): Promise<Order | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('orders')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error && error.code !== 'PGRST116') throw error;
+  return data;
+}
+```
+
+### Server Actions
+
+All mutations go through server actions — functions marked with `'use server'` that run on the server. Every server action validates input with Zod, calls a repository function, invalidates the cache with `revalidatePath()`, and returns a structured response. Actions are colocated with their route in an `actions.ts` file.
+
+The pattern eliminates an entire class of bugs: no more forgetting to invalidate cache, no more unvalidated input reaching the database, no more inconsistent error handling. Server actions replace API routes for all internal mutations.
+
+```typescript
+// app/(protected)/orders/actions.ts
+'use server';
+import { revalidatePath } from 'next/cache';
+import { z } from 'zod';
+import { createOrder } from '@/repositories/orders.repository';
+
+const CreateOrderSchema = z.object({
+  title: z.string().min(1).max(200),
+  customerId: z.string().uuid(),
+  amount: z.number().positive(),
+});
+
+export async function createOrderAction(input: z.infer<typeof CreateOrderSchema>) {
+  const validated = CreateOrderSchema.parse(input);
+  const order = await createOrder(validated);
+  revalidatePath('/orders');
+  return { success: true, data: order };
+}
+```
+
+### Data Fetching
+
+Server Components fetch data directly with `await` — no `useEffect`, no `useState`, no loading state management. The component is the data-fetching layer. Independent sections are wrapped in `<Suspense>` boundaries so they stream to the browser as their data arrives, rather than blocking the entire page on the slowest query.
+
+This eliminates client-side data fetching waterfalls, reduces JavaScript bundle size (Server Components ship zero JS), and provides a better user experience through progressive loading. We do not use React Query or SWR for server data — Server Components with cache invalidation handle it natively.
+
+```tsx
+// page.tsx — the component IS the data-fetching layer
+export default function DashboardPage() {
+  return (
+    <div>
+      <Suspense fallback={<MetricsSkeleton />}>
+        <MetricsSection />  {/* Streams independently */}
+      </Suspense>
+      <Suspense fallback={<OrdersSkeleton />}>
+        <RecentOrdersSection />  {/* Streams independently */}
+      </Suspense>
+    </div>
+  );
+}
+
+async function MetricsSection() {
+  const metrics = await getMetrics(); // Direct await, no useEffect
+  return <MetricsGrid data={metrics} />;
+}
+```
+
+The key insight: each `<Suspense>` boundary creates an independent streaming slot. The fastest query renders first. The slowest query does not block the rest of the page. Users see a progressive build-up of content rather than a blank screen followed by everything at once.
+
+### Database Standards
+
+The database schema is the source of truth. TypeScript types are generated from the schema using `supabase gen types`, never hand-written. Every table has Row Level Security policies — no exceptions. RLS policies read `org_id` from the Clerk JWT, enforcing tenant isolation at the database level.
+
+Schema changes follow a strict migration workflow: write the SQL migration, run it against the development database, generate TypeScript types from the updated schema, update repositories if needed, then test. The generated types flow through repositories into Server Components, creating end-to-end type safety from database column to rendered UI element. If a column is renamed in the database, the TypeScript compiler catches every reference that needs updating — no runtime surprises.
+
+We always use `select *` in repositories rather than picking individual columns. This seems counterintuitive, but it ensures the TypeScript return type exactly matches the generated `Row` type. Column-picking creates a subset type that drifts from the generated type, leading to subtle bugs when new columns are added.
+
+---
+
+## Chapter 2: Architecture
+
+### Route Colocation
+
+Files live next to the route that uses them. A route directory contains its `page.tsx`, `loading.tsx`, `error.tsx`, `actions.ts`, and a `components/` folder. Components are only extracted to the shared library (`_shared/components/`) when three or more routes need them. Two routes sharing a component? Tolerate the duplication — premature abstraction costs more than repetition.
+
+This keeps related code together, makes routes self-contained, and prevents the "shared component library" from becoming a dumping ground for one-off components.
+
+### Webhook Architecture
+
+Webhooks use a SOLID handler registry. Each event type has exactly one handler class. A central router dispatches events to the correct handler based on event type. Handlers receive dependencies through injection, verify webhook signatures with timing-safe comparison, and use idempotency keys to handle retries safely.
+
+Every webhook handler logs the event type, handler name, organization ID, and entity IDs as structured tags. This makes debugging production issues a matter of searching Sentry by tag rather than parsing log files.
+
+### Multi-Tenant Isolation
+
+Clerk manages authentication and organizations. The Clerk JWT includes `org_id`, which Supabase RLS policies read automatically. Every database query is filtered by organization at the database level — application code never needs to add `WHERE org_id = ?` manually. The service role client (which bypasses RLS) is only used in webhook handlers that process cross-tenant events.
+
+---
+
+## Chapter 3: Quality
+
+### TypeScript Strict
+
+Strict mode is always enabled. Zero `any` types in the codebase — use `unknown` with type narrowing instead. Database types are generated from the schema, never hand-written as interfaces. This catches entire categories of bugs at compile time: null reference errors, type mismatches between API and UI, missing fields after schema changes.
+
+### Testing Strategy
+
+Vitest handles unit and integration tests. Tests for repositories mock the Supabase client and verify query construction and error handling. Tests for server actions mock repositories and verify validation, cache invalidation, and response structure. Playwright handles end-to-end tests using the page object pattern for maintainability.
+
+Test files live in `__tests__/` directories next to the code they test. The test pyramid is bottom-heavy: many unit tests, fewer integration tests, minimal end-to-end tests.
+
+### CI Pipeline
+
+CI runs checks in cheapest-first order: lint (seconds), then typecheck (seconds), then tests (minutes). CI only validates — it never deploys. Deployment is a separate process triggered after CI passes. The pipeline fails fast on the first error to minimize wasted compute.
+
+---
+
+## Chapter 4: Security
+
+### Row Level Security
+
+Every table has RLS policies. No exceptions. Policies follow a standard pattern: `auth.jwt() ->> 'org_id'` matches the row's `organization_id` column for SELECT, INSERT, UPDATE, and DELETE. New tables must have RLS enabled and policies created in the same migration. The service role client bypasses RLS and is restricted to webhook handlers and background jobs.
+
+```sql
+-- Standard RLS policy pattern
+ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view orders in their org"
+  ON orders FOR SELECT
+  USING (organization_id = (auth.jwt() ->> 'org_id')::text);
+
+CREATE POLICY "Users can create orders in their org"
+  ON orders FOR INSERT
+  WITH CHECK (organization_id = (auth.jwt() ->> 'org_id')::text);
+
+CREATE POLICY "Users can update orders in their org"
+  ON orders FOR UPDATE
+  USING (organization_id = (auth.jwt() ->> 'org_id')::text);
+
+CREATE POLICY "Users can delete orders in their org"
+  ON orders FOR DELETE
+  USING (organization_id = (auth.jwt() ->> 'org_id')::text);
+```
+
+### Input Validation
+
+Zod schemas validate input at every boundary: form submissions, server actions, webhook payloads, API endpoints. Validation schemas are defined in a shared `validation/` directory and reused across client-side forms and server-side actions. Invalid input is rejected with structured error messages before it reaches any business logic.
+
+The same Zod schema serves double duty: client-side form validation (via libraries like react-hook-form with `@hookform/resolvers/zod`) and server-side action validation. This guarantees that the client-side validation rules and server-side validation rules never drift apart. The schema is defined once and imported by both.
+
+```typescript
+// validation/order.schema.ts — single source of truth
+import { z } from 'zod';
+
+export const CreateOrderSchema = z.object({
+  title: z.string().min(1, 'Title is required').max(200),
+  customerId: z.string().uuid('Invalid customer'),
+  amount: z.number().positive('Amount must be positive'),
+  notes: z.string().max(2000).optional(),
+});
+
+export type CreateOrderInput = z.infer<typeof CreateOrderSchema>;
+```
+
+### Security Headers
+
+Content Security Policy restricts script sources. CORS is configured per-route, not globally. Webhook endpoints verify signatures using timing-safe comparison (`crypto.timingSafeEqual`) to prevent timing attacks. API keys and secrets are environment variables, never committed to the repository. Webhook signature verification follows a standard pattern: extract the signature header, compute the expected signature from the raw body using HMAC-SHA256, and compare using `timingSafeEqual` to prevent timing-based attacks.
+
+---
+
+## Chapter 5: Observability
+
+### Structured Logging
+
+Every module creates a scoped logger with `createModuleLogger('module-name')`. Log entries include structured context fields (user ID, organization ID, entity IDs) rather than string interpolation. Production code never uses `console.log` — the linter catches it.
+
+Structured logs enable searching and filtering in log aggregation tools. Instead of grepping for "order 123", we search for `orderId:123` across all log levels.
+
+### Error Tracking
+
+Sentry captures errors with domain-specific context. Instead of generic `captureException(error)`, we use domain capture functions like `captureWebhookError(error, { eventType, handler, organizationId })` that attach business context to every error. This makes triage faster — the Sentry issue shows exactly which webhook handler failed, for which organization, processing which event.
+
+### Webhook Observability
+
+Every webhook handler is wrapped in a tracing function that records the event type, handler name, processing duration, success/failure, and all relevant entity IDs as searchable tags. Failed webhooks include the error message, stack trace, and the full event payload. This creates a complete audit trail for debugging integration issues.
+
+---
+
+## Chapter 6: Process
+
+### Feature Design
+
+Features start with a design phase, not code. The process: brainstorm 2-3 implementation approaches, evaluate trade-offs (complexity, performance, maintainability), choose one, write a brief design spec, then implement. This prevents the most expensive kind of waste — building the wrong thing.
+
+### Linear Tickets
+
+Tickets follow a standard structure: user story ("As a [role], I want [goal], so that [benefit]"), architecture context (which files, which patterns), acceptance criteria (what "done" looks like), and sub-task breakdown for complex work. The implementer should be able to start coding from the ticket alone, without a meeting.
+
+### Pull Requests
+
+CI must pass before a PR is reviewed. The PR description includes a summary (what changed and why), a test plan (how to verify the change works), and screenshots for UI changes. We never force-push to shared branches. Commits tell a story — each one is a logical unit of change.
+
+### Documentation
+
+Three layers: README.md for humans discovering the project, AGENTS.md for AI coding agents that need project context, and inline documentation for implementation details. Workflow documentation is the single source of truth for lifecycle logic — other docs link to workflows, never duplicate them.
+
+---
+
+## Chapter 7: Frontend Craft
+
+### Component Architecture
+
+Server Components render by default — they run on the server, fetch data directly, and send zero JavaScript to the browser. Client boundaries (`'use client'`) are pushed as deep as possible, wrapping only the interactive leaf components that need event handlers or browser APIs.
+
+Components are colocated with their routes. The shared library only contains components used by three or more routes. Cross-route imports are banned — if route A imports a component from route B's directory, it creates invisible coupling.
+
+Detail views follow a three-layer pattern: Container (manages open/close state), Detail (assembles sections as a Server Component), and Section (renders one concern). Each layer changes independently.
+
+```tsx
+// Server Component — fetches data, renders HTML, zero client JS
+export default async function OrdersPage() {
+  const orders = await getOrders();
+  return (
+    <Suspense fallback={<OrdersTableSkeleton />}>
+      <OrdersTable orders={orders} />
+    </Suspense>
+  );
+}
+
+// Client Component — only the interactive part ships JavaScript
+'use client';
+export function OrdersTable({ orders }: { orders: Order[] }) {
+  const [selected, setSelected] = useState<string | null>(null);
+  // Selection, filtering, sorting — interactivity only
+}
+```
+
+### Performance Patterns
+
+Every interaction feels instant through four layered techniques. Suspense streaming wraps independent page sections in their own `<Suspense>` boundaries so each streams as its data arrives — the shell appears in milliseconds, content fills in progressively. Skeleton-first design replaces every loading state with a skeleton that matches the final layout dimensions, preventing Cumulative Layout Shift.
+
+Optimistic updates use React 19's `useOptimistic` hook to reflect user actions immediately — the UI updates before the server confirms, and rolls back automatically on failure. Smart prefetching preloads likely destinations (detail pages on row hover, next items in sequences) so navigation feels instant.
+
+```tsx
+'use client';
+export function OrdersList({ orders }: { orders: Order[] }) {
+  const [optimisticOrders, removeOrder] = useOptimistic(
+    orders,
+    (state, deletedId: string) => state.filter(o => o.id !== deletedId)
+  );
+
+  const handleDelete = (id: string) => {
+    removeOrder(id); // UI updates instantly
+    startTransition(async () => {
+      await deleteOrderAction(id); // Server syncs in background
+    });
+  };
+}
+```
+
+Target metrics: FCP under 1 second, LCP under 2.5 seconds, TTI under 3 seconds, CLS under 0.1.
+
+### Design Standards
+
+shadcn/ui is the component library — raw HTML elements (`<button>`, `<input>`) are never used for interactive controls. Semantic design tokens (`bg-primary`, `text-foreground`, `border-border`) replace hardcoded colors, providing automatic light/dark mode support. The `cn()` utility merges conditional Tailwind classes cleanly.
+
+Components use consistent spacing tokens (multiples of 4px via Tailwind's spacing scale), never arbitrary values. Every route has an `error.tsx` boundary with a user-friendly message and retry button. Every empty state shows an icon, message, and call-to-action — never a blank space.
+
+### Internal Tools
+
+Admin panels and dashboards optimize for data density over visual impact. Numbers use monospace fonts for scannability (`font-variant-numeric: tabular-nums` or `font-mono`). Tables are the primary layout, not cards. Dark mode is the default for long work sessions. Animations are CSS-only transitions (opacity, transform), never JavaScript-driven — internal tool users are doing repetitive work and perceive animation as delay, not delight.
+
+The key design principle for internal tools is scannability: a user should be able to glance at a screen and find the information they need in under 3 seconds. This means high-contrast text, consistent alignment, generous use of whitespace between groups (but tight spacing within groups), and status indicators that communicate through color and position rather than requiring the user to read text.
+
+---
+
+## Design Philosophy
+
+We believe software should be opinionated about quality. Every pattern in this playbook exists because we encountered the opposite — raw SQL queries that bypassed RLS, `console.log` debugging in production, components with 30 configuration props, forms that accepted invalid input, pages that blocked on slow queries. Each chapter is a lesson learned the hard way and encoded so we never repeat the mistake.
+
+The patterns are composable. You do not need to adopt all 24 chapters. Start with the Repository Pattern and Server Actions (they provide the most immediate value), add RLS if you run multi-tenant, add observability when you ship to production. Each pattern stands on its own, but they reinforce each other when combined.
+
+We open-sourced this playbook because we believe the industry benefits from shared engineering standards. The AI agent skills layer makes these patterns enforceable — not just documented, but actively applied every time an AI agent writes code in your project.
+
+---
+
+## Agent Skills
+
+18 portable AI coding agent skills organized in four tiers. Skills use progressive loading — only the name and description are read at startup, the full skill loads when the agent's task matches.
+
+### Tier 1: Universal (Any Stack)
+
+**design-taste** — Premium UI/UX standards with anti-AI pattern detection. Catches generic AI tells (Inter font, purple gradients, centered hero sections, 3-column feature grids) and enforces distinctive design through tunable dials for variance, motion, and density.
+
+**internal-tools-design** — Internal tool optimization for data density and scannability. Monospace numbers, dark mode default, CSS-only transitions, table-first layouts.
+
+**output-enforcement** — Forces complete output from AI agents. Bans truncation patterns (`// ...`, `// TODO`, `// rest of the code`), ellipsis in code blocks, and placeholder comments.
+
+**cross-editor-setup** — Multi-agent configuration. Generates AGENTS.md, CLAUDE.md, Cursor rules, Copilot instructions, and Windsurf rules from a single source of truth.
+
+### Tier 2: React / Next.js / TypeScript
+
+**react-architecture** — Component decomposition signals and patterns. Triggers on files over 300 lines, more than 15 useState hooks, or more than 4 useEffect hooks. Provides hook extraction, state machine patterns, hydration safety, and React 19 API usage.
+
+**nextjs-patterns** — Next.js App Router patterns. Server Components for data fetching, Suspense boundaries for streaming, server actions with Zod validation, cache invalidation strategies, and Link prefetching.
+
+**shadcn-components** — shadcn/ui component rules. CSS variables over hardcoded colors, Sheet toggle pattern (single handler, not separate open/close), three-layer detail view architecture, skeleton-first loading states.
+
+### Tier 3: Backend / Infrastructure
+
+**supabase-patterns** — Supabase database patterns. Repository pattern enforcement, schema-first migration workflow, RLS policy templates, type generation pipeline, `select *` for type safety.
+
+**observability** — Production observability. Structured logger factory with module scoping, Sentry integration with domain-specific capture functions, webhook tracing with searchable tags.
+
+**webhook-architecture** — Webhook handler patterns. SOLID handler registry, one handler per event type, dependency injection, idempotency key enforcement, timing-safe signature verification.
+
+**security-and-compliance** — Security patterns. RLS enforcement checklist, Zod validation at every boundary, webhook signature verification, GDPR consent tracking, SOC 2 audit preparation.
+
+**testing** — Test patterns. Vitest configuration, Supabase client mocking, Playwright page objects, `__tests__/` directory conventions, test naming standards.
+
+### Tier 4: Workflow / Process
+
+**doc-audit** — Documentation audit. Three-layer doc system (README + AGENTS.md + CLAUDE.md), coverage gap detection, staleness alerts, automated doc generation for missing files.
+
+**feature-design** — Feature planning. Interactive brainstorming framework, 2-3 approach proposals with trade-off analysis, design spec templates.
+
+**linear-tickets** — Ticket creation. User stories, architecture context for implementers, acceptance criteria, sub-task breakdown, label conventions.
+
+**pull-request** — PR creation. CI validation before PR, rich descriptions with summary and test plan, screenshot requirements for UI changes.
+
+**ci-pipeline** — CI/CD configuration. Cheapest-first check ordering, CI validates only (never deploys), extensible step pattern for adding new checks.
+
+**route-colocation** — File organization. Route-level colocation rules, the 3-use threshold for shared extraction, actions folder pattern.
+
+---
+
+## Technical Stack Summary
+
+| Layer | Technology | Role |
+|-------|-----------|------|
+| Framework | Next.js 16 (App Router) | Server Components, streaming, server actions |
+| UI Library | React 19 | useOptimistic, useTransition, Suspense |
+| Language | TypeScript (strict mode) | End-to-end type safety |
+| Component Library | shadcn/ui + Tailwind CSS | Semantic tokens, accessible primitives |
+| Database | Supabase (PostgreSQL) | RLS, real-time subscriptions, generated types |
+| Auth | Clerk | Organizations, JWT with org_id, webhooks |
+| Validation | Zod | Schema validation at every boundary |
+| Testing | Vitest + Playwright | Unit/integration + end-to-end |
+| Observability | Sentry + structured logging | Error tracking, distributed tracing |
+| CI/CD | GitHub Actions + Vercel | Lint, typecheck, test, deploy |
+| Package Manager | Bun + Turborepo | Monorepo orchestration |
+
+---
+
+## Links
+
+- GitHub: https://github.com/modh-labs/playbook
+- Website: https://modh.ca/playbook
+- Agent Skills Install: `git submodule add https://github.com/modh-labs/playbook .agents/modh-playbook`
