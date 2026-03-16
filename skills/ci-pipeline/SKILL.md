@@ -1,6 +1,15 @@
 ---
 name: ci-pipeline
 description: Enforce CI pipeline conventions. Use when adding CI checks, modifying GitHub Actions workflows, or discussing CI vs deployment. Prevents deployment steps in CI and ensures the extensible step pattern is followed.
+tier: process
+icon: workflow
+title: "CI Pipeline Standards"
+seo_title: "CI Pipeline Standards — Modh Engineering Skill"
+seo_description: "Enforce CI pipeline conventions. Prevents deployment steps in CI and ensures the extensible step pattern is followed."
+keywords: ["CI pipeline", "GitHub Actions", "continuous integration", "automation", "quality gates"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # CI Pipeline Skill

@@ -2,6 +2,15 @@
 name: supabase-patterns
 description: Implement database access and schema management with Supabase. Use when writing repository functions, database queries, creating tables, running migrations, RLS policies, or generating types. Enforces repository pattern, select *, schema-first workflow, and org isolation via RLS.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
+tier: backend
+icon: database
+title: "Supabase & Repository Patterns"
+seo_title: "Supabase & Repository Patterns — Modh Engineering Skill"
+seo_description: "Implement database access and schema management with Supabase. Enforces repository pattern, select *, schema-first workflow, and org isolation via RLS."
+keywords: ["supabase", "repository pattern", "database", "RLS", "migrations"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # Supabase Patterns Skill

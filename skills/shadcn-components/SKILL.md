@@ -2,6 +2,15 @@
 name: shadcn-components
 description: Build UI components following shadcn/ui patterns. Use when creating components, styling, theming, building detail views, sheets, dialogs, or forms. Enforces shadcn components, CSS variables, variant usage, detail view architecture, and component colocation.
 allowed-tools: Read, Grep, Glob, Edit, Write
+tier: react
+icon: square
+title: "shadcn/ui Component Patterns"
+seo_title: "shadcn/ui Component Patterns — Modh Engineering Skill"
+seo_description: "Build UI components following shadcn/ui patterns. Enforces shadcn components, CSS variables, variant usage, detail view architecture, and component colocation."
+keywords: ["shadcn", "ui components", "tailwind", "theming", "design system"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # shadcn Components Skill

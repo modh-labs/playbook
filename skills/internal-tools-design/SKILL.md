@@ -1,6 +1,15 @@
 ---
 name: internal-tools-design
 description: Use when building or modifying admin dashboards, internal tools, ops panels, or back-office UIs. Enforces scannability, data density, tactile feedback, and dark-mode-safe patterns calibrated for daily-use operational tools.
+tier: universal
+icon: layout-dashboard
+title: "Internal Tools Design"
+seo_title: "Internal Tools Design — Modh Engineering Skill"
+seo_description: "Use when building or modifying admin dashboards, internal tools, ops panels, or back-office UIs. Enforces scannability, data density, and dark-mode-safe patterns."
+keywords: ["internal tools", "admin dashboard", "ops panel", "data density", "dark mode"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # Internal Tools Design

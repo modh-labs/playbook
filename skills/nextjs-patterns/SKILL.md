@@ -2,6 +2,15 @@
 name: nextjs-patterns
 description: Implement data fetching, server actions, and performance patterns for Next.js App Router. Use when fetching data in pages, writing mutations, adding loading states, Suspense boundaries, prefetching, or discussing data flow. Enforces Server Components, repository usage, structured returns, and progressive loading.
 allowed-tools: Read, Grep, Glob, Edit, Write
+tier: react
+icon: layers
+title: "Next.js Data & Mutation Patterns"
+seo_title: "Next.js Data & Mutation Patterns — Modh Engineering Skill"
+seo_description: "Implement data fetching, server actions, and performance patterns for Next.js App Router. Enforces Server Components, repository usage, and progressive loading."
+keywords: ["nextjs", "server actions", "data fetching", "app router", "suspense"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # Next.js Patterns Skill

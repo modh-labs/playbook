@@ -1,6 +1,15 @@
 ---
 name: pull-request
 description: Create pull requests with mandatory CI validation, unit tests, and rich descriptions. Use when creating PRs, submitting code for review, or pushing changes. Runs CI before any PR and blocks creation on failure. Uses standard git + gh CLI for branching and PR creation.
+tier: process
+icon: git-pull-request
+title: "Pull Request Conventions"
+seo_title: "Pull Request Conventions — Modh Engineering Skill"
+seo_description: "Create pull requests with mandatory CI validation, unit tests, and rich descriptions. Runs CI before any PR and blocks creation on failure."
+keywords: ["pull request", "code review", "CI validation", "git workflow", "PR description"]
+difficulty: beginner
+related_chapters: []
+related_tools: []
 ---
 
 # Pull Request Skill

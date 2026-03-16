@@ -5,6 +5,15 @@ description: >
   extensibility. Use when creating webhook routes, adding event handlers,
   building handler registries, or refactoring webhook code. Enforces registry
   pattern, single responsibility, and dependency injection.
+tier: backend
+icon: webhook
+title: "SOLID Webhook Architecture"
+seo_title: "SOLID Webhook Architecture — Modh Engineering Skill"
+seo_description: "Enforce SOLID principles in webhook architecture for maintainability and extensibility. Enforces registry pattern, single responsibility, and dependency injection."
+keywords: ["webhooks", "SOLID", "handler registry", "dependency injection", "event handlers"]
+difficulty: advanced
+related_chapters: []
+related_tools: []
 ---
 
 # Webhook Architecture Skill

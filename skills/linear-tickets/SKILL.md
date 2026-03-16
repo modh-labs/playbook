@@ -1,6 +1,15 @@
 ---
 name: linear-tickets
 description: Create rich, well-documented Linear tickets with user stories, journey diagrams, architecture context, edge cases, and acceptance criteria. Use when creating issues, planning features, reporting bugs, or breaking down work. Ensures tickets provide full context for implementation.
+tier: process
+icon: ticket
+title: "Linear Ticket Standards"
+seo_title: "Linear Ticket Standards — Modh Engineering Skill"
+seo_description: "Create rich, well-documented Linear tickets with user stories, journey diagrams, architecture context, edge cases, and acceptance criteria."
+keywords: ["linear", "tickets", "user stories", "acceptance criteria", "issue tracking"]
+difficulty: beginner
+related_chapters: []
+related_tools: []
 ---
 
 # Linear Ticket Creation Skill

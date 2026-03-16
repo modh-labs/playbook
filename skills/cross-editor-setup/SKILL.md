@@ -1,6 +1,15 @@
 ---
 name: cross-editor-setup
 description: Ensure AI configuration works across Claude Code, Cursor, Copilot, Windsurf, and Codex. Use when creating AGENTS.md files, adding skills, setting up project rules, or discussing cross-editor compatibility. Enforces the @import convention and single-source-of-truth strategy.
+tier: universal
+icon: settings-2
+title: "Cross-Editor AI Setup"
+seo_title: "Cross-Editor AI Setup — Modh Engineering Skill"
+seo_description: "Ensure AI configuration works across Claude Code, Cursor, Copilot, Windsurf, and Codex. Enforces the @import convention and single-source-of-truth strategy."
+keywords: ["cross-editor", "AI setup", "AGENTS.md", "Claude Code", "Cursor"]
+difficulty: beginner
+related_chapters: []
+related_tools: []
 ---
 
 # Cross-Editor Setup Skill

@@ -1,6 +1,15 @@
 ---
 name: route-colocation
 description: Guide code organization, folder structure, and route architecture following colocation-first patterns. Use when creating routes, deciding file placement, organizing imports, or structuring documentation. Enforces the 3+ routes sharing threshold, actions folder pattern, and documentation placement rules.
+tier: react
+icon: folder-tree
+title: "Route Colocation"
+seo_title: "Route Colocation — Modh Engineering Skill"
+seo_description: "Guide code organization, folder structure, and route architecture following colocation-first patterns. Enforces the 3+ routes sharing threshold and actions folder pattern."
+keywords: ["route colocation", "folder structure", "code organization", "file placement", "nextjs routes"]
+difficulty: beginner
+related_chapters: []
+related_tools: []
 ---
 
 # Route Colocation Skill

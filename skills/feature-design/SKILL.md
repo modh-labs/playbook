@@ -1,6 +1,15 @@
 ---
 name: feature-design
 description: Interactive feature design process from rough idea to implementation-ready spec. Use when brainstorming new features, fleshing out tickets, or planning multi-phase projects. Enforces a hard gate — no implementation until the design is approved.
+tier: process
+icon: lightbulb
+title: "Feature Design Process"
+seo_title: "Feature Design Process — Modh Engineering Skill"
+seo_description: "Interactive feature design process from rough idea to implementation-ready spec. Enforces a hard gate — no implementation until the design is approved."
+keywords: ["feature design", "specification", "planning", "design process", "implementation spec"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # Feature Design

@@ -1,6 +1,15 @@
 ---
 name: output-enforcement
 description: Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.
+tier: universal
+icon: file-check
+title: "Output Enforcement"
+seo_title: "Output Enforcement — Modh Engineering Skill"
+seo_description: "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly."
+keywords: ["output enforcement", "code generation", "LLM", "completeness", "no placeholders"]
+difficulty: beginner
+related_chapters: []
+related_tools: []
 ---
 
 # Full-Output Enforcement

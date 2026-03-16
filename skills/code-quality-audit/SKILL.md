@@ -5,6 +5,15 @@ description: >
   Use when auditing for SOLID violations, missing error handling, type safety gaps,
   dead code, duplicated patterns, or insufficient test coverage. Also use when
   remediating code to gold-standard clean architecture.
+tier: backend
+icon: search-code
+title: "Code Quality Audit"
+seo_title: "Code Quality Audit — Modh Engineering Skill"
+seo_description: "Systematic audit and remediation of a route or module to production-grade quality. Use when auditing for SOLID violations, missing error handling, and type safety gaps."
+keywords: ["code quality", "audit", "SOLID", "clean architecture", "refactoring"]
+difficulty: advanced
+related_chapters: []
+related_tools: []
 ---
 
 # Code Quality Audit

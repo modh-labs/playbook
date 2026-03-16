@@ -5,6 +5,15 @@ description: >
   Zod validation, environment variable safety, GDPR consent, and SOC 2 compliance.
   Use when adding tables, webhook handlers, server actions, authentication, or
   preparing for security audits. Prevents XSS, injection, and data leakage.
+tier: backend
+icon: lock
+title: "Security & Compliance"
+seo_title: "Security & Compliance — Modh Engineering Skill"
+seo_description: "Enforce security standards including RLS policies, webhook signature verification, Zod validation, environment variable safety, GDPR consent, and SOC 2 compliance."
+keywords: ["security", "compliance", "RLS", "GDPR", "SOC 2"]
+difficulty: intermediate
+related_chapters: []
+related_tools: []
 ---
 
 # Security & Compliance Skill

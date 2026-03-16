@@ -5,6 +5,15 @@ description: >
   patterns, hydration safety, and React 19 APIs. Use when components grow
   beyond 300 lines, accumulate boolean props, mix unrelated concerns, or need
   multi-step flow management.
+tier: react
+icon: component
+title: "React Component Architecture"
+seo_title: "React Component Architecture — Modh Engineering Skill"
+seo_description: "React component decomposition, hook extraction, state machines, composition patterns, hydration safety, and React 19 APIs."
+keywords: ["react", "component architecture", "hooks", "state machines", "composition patterns"]
+difficulty: advanced
+related_chapters: []
+related_tools: []
 ---
 
 # React Architecture
