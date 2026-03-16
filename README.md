@@ -48,6 +48,7 @@ How we keep code correct. Types catch bugs at compile time. Tests catch bugs at 
 | [TypeScript Strict](chapters/03-quality/typescript-strict.md) | Zero `any`, generated types, strict mode always on |
 | [Testing Strategy](chapters/03-quality/testing-strategy.md) | Vitest for units, Playwright for flows, mocks for Supabase |
 | [CI Pipeline](chapters/03-quality/ci-pipeline.md) | Cheapest checks first, no deploy in CI, fail fast |
+| [Code Quality Audit](chapters/03-quality/code-quality-audit.md) | Detect parallel systems, delete dead code, validate against production |
 
 ### 4. Security
 
@@ -95,7 +96,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 
 ## Agent Skills
 
-18 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+19 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -123,6 +124,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`webhook-architecture`](skills/webhook-architecture/) | Creating webhook handlers | SOLID handler registry, one handler per event, dependency injection, idempotency |
 | [`security-and-compliance`](skills/security-and-compliance/) | New tables, auth flows, input validation | RLS enforcement, Zod at boundaries, webhook signatures, GDPR consent, SOC 2 checklist |
 | [`testing`](skills/testing/) | Writing tests | Vitest patterns, Supabase mocking, Playwright page objects, `__tests__/` conventions |
+| [`code-quality-audit`](skills/code-quality-audit/) | Auditing routes/modules for quality | Detect parallel systems, SOLID compliance, dead code removal, production data validation |
 
 ### Tier 4: Workflow / Process
 
