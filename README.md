@@ -121,6 +121,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 |-------|------------------|--------------|
 | [`supabase-patterns`](skills/supabase-patterns/) | Database queries, migrations, RLS | Repository pattern, schema-first workflow, RLS policies, type generation |
 | [`observability`](skills/observability/) | Adding logging, error tracking, tracing | Structured logger factory, Sentry integration, domain capture functions, webhook observability |
+| [`write-criticality`](skills/write-criticality/) | Adding error handling for DB writes, retry logic | Three-tier write classification (tracking/retriable/critical), transient retry, alarm severity matching |
 | [`webhook-architecture`](skills/webhook-architecture/) | Creating webhook handlers | SOLID handler registry, one handler per event, dependency injection, idempotency |
 | [`security-and-compliance`](skills/security-and-compliance/) | New tables, auth flows, input validation | RLS enforcement, Zod at boundaries, webhook signatures, GDPR consent, SOC 2 checklist |
 | [`testing`](skills/testing/) | Writing tests | Vitest patterns, Supabase mocking, Playwright page objects, `__tests__/` conventions |
