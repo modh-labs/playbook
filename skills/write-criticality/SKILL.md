@@ -5,6 +5,17 @@ description: >
   false-positive data-loss alarms. Use when adding error handling for DB writes, Sentry
   alerting for failed operations, or designing retry logic. Prevents noisy alerts from
   fire-and-forget writes while ensuring real data loss is caught and retried.
+tier: backend
+icon: shield-check
+title: "Write Criticality Classification"
+seo_title: "Write Criticality — Classify DB Writes to Eliminate False Data-Loss Alarms"
+seo_description: "Stop alarming on every failed write. Classify writes by durability requirement — tracking, retriable, or critical — and match alarm severity to actual risk."
+keywords: ["write criticality", "database writes", "false alarms", "retry logic", "sentry"]
+difficulty: intermediate
+related_chapters:
+  - "05-observability/error-tracking"
+related_tools:
+  - "write-criticality-framework"
 ---
 
 # Write Criticality

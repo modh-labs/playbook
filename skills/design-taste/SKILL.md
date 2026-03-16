@@ -1,6 +1,18 @@
 ---
 name: design-taste
 description: Premium UI/UX design engineering skill. Overrides default LLM design biases with tunable dials for variance, motion, and density. Enforces anti-AI-tell patterns, strict typography rules, color calibration, layout diversification, performance guardrails, and comprehensive design audit checklists. Framework-agnostic.
+tier: universal
+icon: palette
+title: "Premium UI Design Engineering"
+seo_title: "Design Taste Skill — Premium UI Patterns That Override AI Defaults"
+seo_description: "Override default AI design biases with tunable dials for variance, motion, density, and color. Detect and eliminate generic AI aesthetic patterns."
+keywords: ["UI design", "design engineering", "AI design patterns", "premium UI"]
+difficulty: advanced
+related_chapters:
+  - "07-frontend-craft/design-standards"
+  - "07-frontend-craft/component-architecture"
+related_tools:
+  - "engineering-health-check"
 ---
 
 # Design Taste

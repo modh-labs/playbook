@@ -5,6 +5,19 @@ description: >
   Use when adding logging, error tracking, Sentry tags, custom spans, metrics,
   webhook observability, or debugging production issues. Prevents console.log
   usage and ensures trace correlation.
+tier: backend
+icon: activity
+title: "Structured Logging & Observability"
+seo_title: "Observability Skill — Structured Logging, Sentry & Distributed Tracing"
+seo_description: "Stop using console.log. Enforce structured logging, domain-specific Sentry captures, and distributed tracing across your application."
+keywords: ["observability", "sentry", "structured logging", "error tracking", "distributed tracing"]
+difficulty: intermediate
+related_chapters:
+  - "05-observability/structured-logging"
+  - "05-observability/error-tracking"
+  - "05-observability/webhook-observability"
+related_tools:
+  - "engineering-health-check"
 ---
 
 # Observability & Logging Skill
