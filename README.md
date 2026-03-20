@@ -96,7 +96,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 
 ## Agent Skills
 
-19 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+20 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -106,6 +106,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`internal-tools-design`](skills/internal-tools-design/) | Building admin panels, dashboards, ops tools | Optimizes for scannability and data density over visual impact — monospace numbers, dark mode, CSS-only transitions |
 | [`output-enforcement`](skills/output-enforcement/) | Any code generation task | Bans `// ...`, `// TODO`, truncation patterns — forces complete, production-ready output |
 | [`cross-editor-setup`](skills/cross-editor-setup/) | Setting up AI config for a project | Guides AGENTS.md + CLAUDE.md + Cursor rules setup for multi-agent team compatibility |
+| [`code-review`](skills/code-review/) | Reviewing PRs, checking branch before push, batch quality sweeps | Seven-dimension review (observability, testing, SOLID, type safety, security, business logic, clean code) with pass/fail verdicts and educational findings |
 
 ### Tier 2: React / Next.js / TypeScript
 
