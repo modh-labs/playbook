@@ -148,6 +148,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`ci-pipeline`](skills/ci-pipeline/) | Modifying CI/CD | CI checks only (no deploy), cheapest-first ordering, extensible step pattern |
 | [`documentation-architecture`](skills/documentation-architecture/) | Adding features, creating docs, organizing knowledge | Three-layer system (README + AGENTS.md + CLAUDE.md), JSDoc tiers, cross-editor compatibility |
 | [`route-colocation`](skills/route-colocation/) | Creating routes, organizing files | Colocate with routes, share at 3+ usages, actions folder pattern |
+| [`bug-cleanup-triage`](skills/bug-cleanup-triage/) | Planning a backlog cleanup session, before dispatching research agents, umbrella tickets stuck In Progress for weeks | Three-phase framework (hygiene → investigation → fixing) with git log pre-flight, Sentry module-tag verification, and umbrella breakdown auto-detection |
 
 ---
 
