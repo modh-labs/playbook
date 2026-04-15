@@ -88,20 +88,32 @@ Task(subagent_type=Explore, prompt="Investigate TICKET-910 status resolution..."
 # and file:line X IS the fix, not the bug. 30 minutes wasted.
 ```
 
-### Rule 2: Shipped ≠ live — always verify with Sentry module-tag count
+### Rule 2: Shipped ≠ live — always verify with Sentry module-tag count IN THE CORRECT DATASET
 
-**WHY:** A fix can be on `main` and still be completely silent in production. Missing env var, unset feature flag, upstream webhook not firing, silent no-op client — any of these leaves instrumented code dormant. The commit is green; the fix is not.
+**WHY:** A fix can be on `main` and still be completely silent in production. Missing env var, unset feature flag, upstream webhook not firing, silent no-op client — any of these leaves instrumented code dormant. The commit is green; the fix is not. But also: **`0 events in errors` means "nothing is broken," NOT "nothing is firing."** Choose the dataset based on what the fix instruments.
 
-**CORRECT — verify before closing:**
+**Dataset selection matrix:**
+
+| Fix emits | Query dataset | Query shape |
+|-----------|---------------|-------------|
+| `logger.info` / `logger.warn` (success-path logging via a module logger) | **logs** | `count of log events in the logs dataset where module equals <module-name>` |
+| `captureException` (error capture) | **errors** | `count of errors where stack.module:<module-name>` |
+| Both (most real fixes) | **logs first, then errors** | Run both; >0 in logs = firing successfully, >0 in errors = firing but failing |
+
+**CORRECT — verify before closing, logs dataset first:**
 ```
-# Fix claims to touch module:meta-capi
+# Fix adds `logger.info("event sent")` via createModuleLogger("meta-capi")
 mcp__sentry__search_events(
   organizationSlug: "<org>",
-  naturalLanguageQuery: "count of events tagged module:meta-capi in the last 7 days"
+  naturalLanguageQuery: "count of log events in the logs dataset where module equals meta-capi in the last 14 days"
 )
-# Returns count() = 42 → fix is live → close ticket
-# Returns count() = 0  → fix is silent → do NOT close, escalate config gap
+# Returns count() = 45 → fix is live → close ticket
 ```
+
+**Result interpretation:**
+- **>0 in logs:** fix is live, proceed to close
+- **0 in logs AND 0 in errors:** fix code exists but is never reached → likely config gap (missing env var, feature flag off, upstream webhook not firing). Don't close; escalate with Sentry link and config diagnosis.
+- **0 in logs AND >0 in errors:** the code path IS reached, but every invocation throws. Worse than not firing — prioritize error triage, don't close.
 
 **WRONG — trust the commit blindly:**
 ```
@@ -193,7 +205,7 @@ Before marking any bug-cleanup session "done," verify:
 **What actually happened:**
 - **9 of 14 were already fixed on `main`** across three commits — `ec418890a` (AUR-901 billing), `880bbfa0b` (7-bug batch), `1c794af14` (AUR-938 Nylas notify_participants).
 - **5 parallel research agents were dispatched before the git log check.** They ran for 30 minutes on already-fixed code. Each agent confidently described the fix code as if it were the bug — the comment `// AUR-916 insurance PUT` reads identically whether you interpret it as the bug marker or the fix marker.
-- **AUR-937 (Meta CAPI):** code shipped correctly, but Sentry query showed `count(module:meta-capi) = 0` over 7 days. `META_ACCESS_TOKEN` was unset in Vercel production → CAPI client silently no-op. Ticket had been sitting as "in progress" with the code already deployed. Without Sentry verification, it would have been closed prematurely.
+- **AUR-937 (Meta CAPI) — the dataset trap:** code shipped correctly, `META_ACCESS_TOKEN` was set in Vercel production 5 days earlier, and the integration had been firing 45 events in the past 14 days. A first-pass Sentry query of `count() where stack.module:meta-capi` against the **errors** dataset returned `0` events. The first version of this skill interpreted that as "shipped but silent → escalate for config fix" and nearly closed the ticket with the wrong diagnosis. The user pushed back ("isn't the token already there?"), and a re-query against the **logs** dataset (where successful `logger.info` calls land) returned 45 events. **Zero errors ≠ nothing firing.** This is why Rule 2 now specifies the dataset selection matrix — the lesson was learned the hard way within hours of the skill first landing on main.
 - **AUR-351:** `Needs Breakdown` label since February, In Progress for 2+ months, description listed 9 distinct analytics bugs. Breakdown produced 9 children (AUR-951 through AUR-959) grouped into 3 clusters. First child shipped within a week.
 
 **Cost comparison:**
