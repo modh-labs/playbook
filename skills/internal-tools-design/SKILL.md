@@ -16,6 +16,8 @@ related_tools: []
 
 Calibrated for ops dashboards, admin panels, and back-office tools where the user checks this page 20 times a day. Every decision optimizes for **scannability, speed, and reliability** — not visual impact.
 
+> **Rule count:** 12. Rules 11 (Flatten Before Expand) and 12 (Tri-State Picker) are newer and frequently violated — review them first on any admin UI.
+
 ## Baseline Configuration
 
 ```
@@ -28,7 +30,7 @@ These values are non-negotiable for internal tools. If the user asks for a marke
 
 ---
 
-## The 10 Rules
+## The 12 Rules
 
 ### 1. Data Hierarchy Over Decoration
 
@@ -196,6 +198,68 @@ Internal tools are primarily desktop. But don't break on tablet.
 - Search bars: `min-w-[280px]` with `flex-1`
 - Tables: horizontal scroll on mobile (wrap in `overflow-x-auto`)
 - Sidebar: collapsible with persisted state in localStorage
+
+### 11. Flatten Before You Expand
+
+Progressive disclosure — hiding secondary controls behind an expand/
+collapse chevron — is a consumer-UI reflex that usually makes internal
+tools worse. Ops users scan rows, not chevrons. Every expand state is a
+click-to-discover that the next ops user doesn't know about.
+
+**Default rule: if every row in a list has a body, don't collapse it.**
+Render every control visible inline. Density is the feature.
+
+Only use expand/collapse when:
+
+- The body is genuinely optional (not every row has one)
+- The body is heavy enough to hurt scroll performance if always mounted
+- The ops task primarily involves scanning headers, and bodies are the exception
+
+If you've hit two of those three, use `<details>` or shadcn
+`Collapsible` with `data-state` exposed so tests can target it. If you
+haven't hit two of three, flatten. Dense beats clever.
+
+**Signal to watch for in review:** a form or editor with `useState`
+tracking `isExpanded` per row is usually a flatten candidate. The
+state is serving complexity, not the user.
+
+### 12. Tri-State Picker over Dual-Toggle
+
+Any time a field has two booleans that together express one concept —
+`{ enabled, required }`, `{ visible, active }`, `{ included, locked }`
+— collapse them into a single segmented picker with one segment per
+real state. Three switches on one row is worse than one three-segment
+control.
+
+The classic trap: you start with a `Required?` switch. Then someone
+asks for an `Include in form?` toggle. You add it as a second switch.
+Now the row has two switches with subtle interactions ("if not
+included, required doesn't matter"). Ops users have to learn a
+mini-rulebook. Disable logic for the dependent toggle is implicit.
+
+**Fix:** map the real states onto one picker.
+
+```
+Instead of:   [ Include ✓ ]  [ Required ✓ ]
+Use:          [ Required | Optional | Disabled ]
+```
+
+All three states are always reachable. The dependent-toggle UX trap
+disappears. Screen readers announce a `radiogroup` with a clear
+accessible name. Tests target by `getByRole("radio", { name: /required/i })`.
+
+Supports a `mode` prop (`tri` | `binary` | `locked`) so different row
+types can show different subsets without forking the component:
+
+- `tri` — all three segments (the full picker)
+- `binary` — just Required + Optional (custom fields that can't be
+  disabled at this level)
+- `locked` — single pinned segment, read-only (structurally required
+  fields that can't be toggled at all)
+
+Reference: a tri-state `FieldRequirementPicker` shipped in Aura's
+scheduler booking-form builder, replacing two switches plus a hidden
+dependency between them.
 
 ---
 
