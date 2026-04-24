@@ -4,7 +4,7 @@
 
 This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
 
-25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 32 AI agent skills that enforce these patterns automatically in your editor.
+25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 41 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
@@ -121,6 +121,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`form-builder-rhf-isolation`](skills/form-builder-rhf-isolation/) | Dynamic form-builders in React Hook Form + shadcn (question builders, field editors, row lists) | Prevents cascade re-renders + focus loss — `useFieldArray` for READ, `setValue` for WRITE, `useWatch` by index, blur-time key regen |
 | [`status-rollup-chip`](skills/status-rollup-chip/) | Admin tables with 6+ columns, horizontal overflow, or columns that together answer one readiness question | Collapses dense columns into one derived chip + popover-with-deep-links + row-click sheet triad; preserves one-click muscle memory for common mutations |
 | [`debug-hmr-stale-bundle`](skills/debug-hmr-stale-bundle/) | "Module factory is not available" errors, empty-object error logs, origin-specific failures in Next.js + Turbopack dev | Diagnoses browser-side stale bundles via subdomain/incognito parity test, fixes with site-data clearing, prevents wasted hours reading red-herring stack traces |
+| [`middleware-cookie-fast-path`](skills/middleware-cookie-fast-path/) | Edge-cached page needs request-scoped client data (geo, timezone, AB variant, feature flag); tracking script gated behind client-side consent check; N components firing duplicate `/api/*` requests | Stamps client-readable cookie in middleware so client reads synchronously, eliminating post-hydration fetch waterfalls — reference incident was a 34-second mobile Meta Pixel fire on Slow 3G |
 
 ### Tier 3: Backend / Infrastructure
 
