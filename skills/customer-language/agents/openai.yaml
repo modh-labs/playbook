@@ -1,0 +1,4 @@
+interface:
+  display_name: "Customer language"
+  short_description: "Make customer-facing product language plain and clear"
+  default_prompt: "Review this customer-facing language and make it immediately clear without changing product behavior."
