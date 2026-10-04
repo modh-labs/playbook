@@ -4,7 +4,7 @@
 
 This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
 
-25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 59 AI agent skills that enforce these patterns automatically in your editor.
+25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 60 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 
 ## Agent Skills
 
-59 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+60 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -168,6 +168,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`type-cast-silent-bugs`](skills/type-cast-silent-bugs/) | Type-tightening migrations (Drizzle, ORM swap, schema rename); audits that grep for `as any` / `as unknown as` / `useState<any[]>`; "this dashboard's been silently broken for months" investigations | Reframes type-assertion casts on DB query results as silent-bug indicators rather than type-safety nits — the cast almost always hides column/table drift the type system would otherwise catch. Origin: Aura 2026-05-16 admin Drizzle sweep surfaced 11 silently-broken dashboards (calibration: ~1 silent bug per 9 casts). Includes the diagnostic question, three cast patterns to audit, and the in-scope-fix discipline that prevents follow-up-ticket erosion |
 | [`github-ci-efficiency-audit`](skills/github-ci-efficiency-audit/) | "Make CI cheaper/faster without burning minutes"; a CI/Actions billing surprise; hardening a repo/org; a green pipeline that still merges red; `--affected` reding unrelated PRs | Two-question audit (which jobs run on metered runners + how often + is the every-PR install cached; does a red check actually block merge). Finds metered stragglers among third-party runners (Blacksmith/Depot), the dominant high-frequency cron, and the uncached every-PR install. Applies merge-hygiene + secret-scanning + Dependabot + CODEOWNERS via the `gh` CLI. Covers the required-checks ordering trap (don't require CI until the branch is PR-only) and the `--affected` traps that red unrelated PRs: `always()` coverage steps ENOENT-ing, base-ref fallback running everything, a broken base file reding every PR's merge-ref build, and `gh run rerun` replaying the stale merge commit |
 | [`dedup-key-completeness`](skills/dedup-key-completeness/) | Writing an upsert/onConflict target, a unique constraint, or a "have we seen this already?" window; "my second booking/order/ticket disappeared or merged into the first" reports; reviewing idempotency on a create path that can fire twice | A dedup/idempotency guard must key on EVERY dimension that makes two records legitimately distinct — a missing dimension silently collapses separate records into one (a lost write with no error, no log). Keep true-retry idempotency (a unique upstream id) separate from fuzzy ±N-second near-duplicate windows; handle null key dimensions deliberately. Includes the diagnostic question, decision tree, CORRECT/WRONG examples, and an audit checklist |
+| [`retry-vs-reporting-classifier`](skills/retry-vs-reporting-classifier/) | A feature's error issue firing during every database/provider outage; a catch around a DB call; widening a retry/transient classifier | Keep "should I retry?" and "is this the code's fault?" as two classifiers. Never retry a full pool; file unreachable-dependency failures as a warning in their own group so a feature issue isn't a second outage alarm. Statement timeouts stay the code's own signal |
 
 ### Tier 4: Workflow / Process
 
