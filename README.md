@@ -4,7 +4,7 @@
 
 This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
 
-25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 80 AI agent skills that enforce these patterns automatically in your editor.
+25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 81 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 
 ## Agent Skills
 
-62 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+63 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -184,6 +184,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`doc-audit`](skills/doc-audit/) | Auditing docs, adding features, before shipping | Three-layer doc system (README + AGENTS.md + CLAUDE.md), coverage reports, staleness detection, gap generation |
 | [`feature-design`](skills/feature-design/) | Starting new features | Interactive brainstorming, 2-3 approach proposals, design specs before implementation |
 | [`linear-tickets`](skills/linear-tickets/) | Creating issues or tickets | Rich tickets with user stories, architecture context, acceptance criteria, sub-task breakdown |
+| [`decision-page-to-ticket`](skills/decision-page-to-ticket/) | A customer report or thread needs product decisions before work starts; engineers and non-engineers must agree on the same choices; options are clearer drawn than described; a grilling session should end in a buildable ticket | Grills the decisions in rounds while an agent looks up the facts, publishes one decision page with a plain view and an engineering view (flows per state, competing systems side by side, every option drawn with a recommendation), then writes the ticket from it: decision table, evidence ledger, criteria with failing-today tests, exact copy and a loop prompt |
 | [`pull-request`](skills/pull-request/) | Creating PRs | CI validation first, rich descriptions with summary + test plan |
 | [`ci-pipeline`](skills/ci-pipeline/) | Modifying CI/CD | CI checks only (no deploy), cheapest-first ordering, extensible step pattern |
 | [`documentation-architecture`](skills/documentation-architecture/) | Adding features, creating docs, organizing knowledge | Three-layer system (README + AGENTS.md + CLAUDE.md), JSDoc tiers, cross-editor compatibility |
