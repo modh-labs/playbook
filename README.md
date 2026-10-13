@@ -4,7 +4,7 @@
 
 This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
 
-25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 81 AI agent skills that enforce these patterns automatically in your editor.
+25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 82 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
@@ -97,7 +97,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 
 ## Agent Skills
 
-63 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
+64 AI agent skills that enforce these patterns automatically. Compatible with Claude Code, Cursor, GitHub Copilot, Windsurf, and OpenAI Codex.
 
 ### Tier 1: Universal (Any Stack, Any Language)
 
@@ -121,6 +121,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`error-report-dedup`](skills/error-report-dedup/) | A capture-and-rethrow wrapper (span/critical-path/retry) nested inside an outer catch that also captures; duplicate tracker issues for one failure | Tag the Error with a non-enumerable `Symbol.for` marker so the second handler skips a duplicate event. Headline bug: the marker is identity-bound, so the inner producer must rethrow the SAME normalized+marked Error, not the raw original. Test both producer and consumer sides |
 | [`prove-your-telemetry`](skills/prove-your-telemetry/) | Adding or changing any log line, error capture, tag or metric; an error report at volume that carries no useful detail; a field that is always `undefined`; a signal that went quiet with no deploy; you cannot confirm a shipped fix landed | Broken instrumentation looks exactly like a healthy system, so it survives for months. Ask "if this were completely broken, would it look any different?", then go read a REAL emitted event, not the code that emits it. Five mechanisms: the wrapper (real error on `cause`, the tell is a field empty on 100% of events), the scrubber (`[Filtered]` values, so log structured facts not free text), the pre-handler filter (deny-list entries that can match your own minified code), the wrong hook (instrumented a path events never take), and the dead subject (volume hit zero because the thing got switched off). Rule: health checks assert MOVEMENT, not configuration |
 | [`cost-to-serve-audit`](skills/cost-to-serve-audit/) | Pricing a plan, partner or reseller deal, or usage add-on; a vendor invoice that does not match the usage your app records; gross margin or unit economics per customer; deciding whether to stay with a vendor or move | A vendor bills by its own meter (connected accounts, bot minutes, tokens, GB-months), and app records drift from it: bot time runs longer than the recording, a reconnect leaves the old account billing, a cost comment in code ages. Read the billing unit off the invoice, count it from the vendor's own signal, label every number real, list or estimate, build archetypes from real medians, find the break-even usage for each price, then fix leaks before negotiating rates and switch vendors last |
+| [`provider-neutral-sync-policy`](skills/provider-neutral-sync-policy/) | Two or more CRMs, payment or ticketing providers each decide "update the existing external record or create another"; one provider creates duplicates the others do not; merging several providers onto shared logic "with no behaviour change" | Puts reuse / start new / leave alone in one pure module that every provider adapter calls, never adopts hand-made records, never reopens finished (or unknown-status) records, maps inbound events to one local record deterministically, and first proves from each provider's tests that they share the rule before merging them |
 
 ### Tier 2: React / Next.js / TypeScript
 
