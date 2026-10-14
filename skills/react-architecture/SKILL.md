@@ -1,8 +1,10 @@
 ---
 name: react-architecture
-description: 'React component decomposition, hook extraction, state machines, composition patterns, hydration safety, and React 19 APIs. Use when components grow beyond 300 lines, accumulate boolean props, mix unrelated concerns, or need multi-step flow management.
-
-'
+description: >
+  React component decomposition, hook extraction, state machines, composition
+  patterns, hydration safety, and React 19 APIs. Use when components grow
+  beyond 300 lines, accumulate boolean props, mix unrelated concerns, or need
+  multi-step flow management.
 ---
 
 # React Architecture

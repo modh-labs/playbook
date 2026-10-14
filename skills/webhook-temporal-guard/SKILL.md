@@ -1,8 +1,11 @@
 ---
 name: webhook-temporal-guard
-description: 'Validate temporal relevance of webhook payloads at the handler boundary — webhooks arrive carrying a moment that has already passed, and acting on past-time payloads writes wrong-but-silent state into your DB and downstream systems. Use when handling any webhook whose payload contains a time the action depends on (start_time, expires_at, scheduled_at, deadline).
-
-'
+description: >
+  Validate temporal relevance of webhook payloads at the handler boundary —
+  webhooks arrive carrying a moment that has already passed, and acting on
+  past-time payloads writes wrong-but-silent state into your DB and downstream
+  systems. Use when handling any webhook whose payload contains a time the
+  action depends on (start_time, expires_at, scheduled_at, deadline).
 ---
 
 # Webhook Temporal Guard

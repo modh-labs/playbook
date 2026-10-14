@@ -1,8 +1,10 @@
 ---
 name: write-criticality
-description: 'Classify database writes by durability requirement (tracking vs critical) to eliminate false-positive data-loss alarms. Use when adding error handling for DB writes, Sentry alerting for failed operations, or designing retry logic. Prevents noisy alerts from fire-and-forget writes while ensuring real data loss is caught and retried.
-
-'
+description: >
+  Classify database writes by durability requirement (tracking vs critical) to eliminate
+  false-positive data-loss alarms. Use when adding error handling for DB writes, Sentry
+  alerting for failed operations, or designing retry logic. Prevents noisy alerts from
+  fire-and-forget writes while ensuring real data loss is caught and retried.
 ---
 
 # Write Criticality

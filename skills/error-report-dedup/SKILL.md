@@ -1,8 +1,13 @@
 ---
 name: error-report-dedup
-description: 'Use when two error handlers sit on the same throw path and each can report to your error tracker (e.g. an inner span/critical-path/retry wrapper that captures-and-rethrows, wrapped by an outer action wrapper that also captures). Tag the Error with a non-enumerable Symbol.for marker so the second handler skips a duplicate event. Triggers on: nested try/catch that both captureException, duplicate issues for one failure, a capture-and-rethrow wrapper, "why are we getting two Sentry events per error".
-
-'
+description: >
+  Use when two error handlers sit on the same throw path and each can report to
+  your error tracker (e.g. an inner span/critical-path/retry wrapper that
+  captures-and-rethrows, wrapped by an outer action wrapper that also captures).
+  Tag the Error with a non-enumerable Symbol.for marker so the second handler
+  skips a duplicate event. Triggers on: nested try/catch that both
+  captureException, duplicate issues for one failure, a capture-and-rethrow
+  wrapper, "why are we getting two Sentry events per error".
 ---
 
 # Error Report Dedup Marker

@@ -60,8 +60,10 @@ skills_root.children.select(&:directory?).sort.each do |skill_dir|
   end
 
   catalog[slug] = metadata unless metadata.empty?
-  canonical = { "name" => name, "description" => description }
-  skill_path.write("---\n#{canonical.to_yaml(line_width: -1).sub(/\A---\n/, "")}---\n#{match[:body]}")
+  # Keep name and description as written. to_yaml re-quotes a folded description
+  # across lines, which Claude Code reads as missing.
+  kept = match[:yaml].split(/^(?=[A-Za-z0-9_-]+:)/).select { |block| block.start_with?("name:", "description:") }
+  skill_path.write("---\n#{kept.map { |block| "#{block.chomp}\n" }.join}---\n#{match[:body]}")
 end
 
 catalog_path.write(

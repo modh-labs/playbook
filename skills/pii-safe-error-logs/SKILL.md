@@ -1,8 +1,12 @@
 ---
 name: pii-safe-error-logs
-description: 'Use whenever a server error with a structured payload flows into a UI error handler. Separate errorMessage (human-readable, may carry PII) from errorCode (machine-readable, log-safe). The errorCode goes into structured logs, Sentry tags, and metric dimensions; the errorMessage goes into the toast / banner the user sees. Skipping this split is how email addresses and phone numbers end up in Logflare.
-
-'
+description: >
+  Use whenever a server error with a structured payload flows into a UI
+  error handler. Separate errorMessage (human-readable, may carry PII)
+  from errorCode (machine-readable, log-safe). The errorCode goes into
+  structured logs, Sentry tags, and metric dimensions; the errorMessage
+  goes into the toast / banner the user sees. Skipping this split is how
+  email addresses and phone numbers end up in Logflare.
 ---
 
 # PII-Safe Error Logs

@@ -1,8 +1,13 @@
 ---
 name: metric-definition-trap
-description: 'Before any metric reaches a report, dashboard, exec deck, or stakeholder, name its population and definition, then adversarially re-query the number against live data. Use when reporting revenue/MRR/conversions/churn/ROAS/signups, building a KPI surface, auditing analytics, or repeating a "we can source this metric" claim. Catches two traps: one label hiding two incompatible populations (e.g. our SaaS revenue vs our customers'' deal revenue), and an un-verified number that is silently 8x off because it includes gating/skipped rows or used the wrong constant.
-
-'
+description: >
+  Before any metric reaches a report, dashboard, exec deck, or stakeholder, name its
+  population and definition, then adversarially re-query the number against live data.
+  Use when reporting revenue/MRR/conversions/churn/ROAS/signups, building a KPI surface,
+  auditing analytics, or repeating a "we can source this metric" claim. Catches two
+  traps: one label hiding two incompatible populations (e.g. our SaaS revenue vs our
+  customers' deal revenue), and an un-verified number that is silently 8x off because
+  it includes gating/skipped rows or used the wrong constant.
 ---
 
 # The Metric Definition Trap

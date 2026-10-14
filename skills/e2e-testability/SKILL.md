@@ -1,8 +1,10 @@
 ---
 name: e2e-testability
-description: 'Write resilient Playwright e2e tests and testable React UIs. Use when writing e2e specs, reviewing flaky tests, building UI components, or adding accessibility attributes. Enforces semantic locators, accessible names, web-first assertions, and Page Object fixtures.
-
-'
+description: >
+  Write resilient Playwright e2e tests and testable React UIs. Use when writing
+  e2e specs, reviewing flaky tests, building UI components, or adding
+  accessibility attributes. Enforces semantic locators, accessible names,
+  web-first assertions, and Page Object fixtures.
 ---
 
 # E2E Testability & Accessible UI

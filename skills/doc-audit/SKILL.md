@@ -1,8 +1,10 @@
 ---
 name: doc-audit
-description: 'Audit and maintain documentation coverage across any codebase using the three-layer system (README.md for humans, AGENTS.md for AI agents, CLAUDE.md as pointer). Finds gaps, stale references, and JSDoc coverage issues. Can generate missing docs. Use when adding features, before shipping, or periodically to maintain coverage.
-
-'
+description: >
+  Audit and maintain documentation coverage across any codebase using the three-layer
+  system (README.md for humans, AGENTS.md for AI agents, CLAUDE.md as pointer).
+  Finds gaps, stale references, and JSDoc coverage issues. Can generate missing docs.
+  Use when adding features, before shipping, or periodically to maintain coverage.
 ---
 
 # Documentation Audit Skill

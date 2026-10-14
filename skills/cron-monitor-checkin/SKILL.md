@@ -1,8 +1,13 @@
 ---
 name: cron-monitor-checkin
-description: 'A cron monitor is only as real as the check-ins that feed it. Vercel''s Sentry integration auto-registers a monitor per cron that EXPECTS check-ins; if the route never calls captureCheckIn, the monitor reports "missed check-in" on every tick forever — a permanent phantom outage that trains your team to ignore alerts. Use when adding/auditing any scheduled job (Vercel cron, GitHub Action schedule, k8s CronJob) wired to a heartbeat monitor (Sentry Crons, Cronitor, Healthchecks.io, Better Stack).
-
-'
+description: >
+  A cron monitor is only as real as the check-ins that feed it. Vercel's Sentry
+  integration auto-registers a monitor per cron that EXPECTS check-ins; if the
+  route never calls captureCheckIn, the monitor reports "missed check-in" on
+  every tick forever — a permanent phantom outage that trains your team to
+  ignore alerts. Use when adding/auditing any scheduled job (Vercel cron, GitHub
+  Action schedule, k8s CronJob) wired to a heartbeat monitor (Sentry Crons,
+  Cronitor, Healthchecks.io, Better Stack).
 ---
 
 # Cron Monitor Check-Ins

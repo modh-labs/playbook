@@ -1,8 +1,10 @@
 ---
 name: webhook-architecture
-description: 'Enforce SOLID principles in webhook architecture for maintainability and extensibility. Use when creating webhook routes, adding event handlers, building handler registries, or refactoring webhook code. Enforces registry pattern, single responsibility, and dependency injection.
-
-'
+description: >
+  Enforce SOLID principles in webhook architecture for maintainability and
+  extensibility. Use when creating webhook routes, adding event handlers,
+  building handler registries, or refactoring webhook code. Enforces registry
+  pattern, single responsibility, and dependency injection.
 ---
 
 # Webhook Architecture Skill

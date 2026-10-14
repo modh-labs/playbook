@@ -1,8 +1,10 @@
 ---
 name: observability
-description: 'Enforce structured logging, Sentry integration, and distributed tracing patterns. Use when adding logging, error tracking, Sentry tags, custom spans, metrics, webhook observability, or debugging production issues. Prevents console.log usage and ensures trace correlation.
-
-'
+description: >
+  Enforce structured logging, Sentry integration, and distributed tracing patterns.
+  Use when adding logging, error tracking, Sentry tags, custom spans, metrics,
+  webhook observability, or debugging production issues. Prevents console.log
+  usage and ensures trace correlation.
 ---
 
 # Observability & Logging Skill

@@ -1,8 +1,10 @@
 ---
 name: code-quality-audit
-description: 'Systematic audit and remediation of a route or module to production-grade quality. Use when auditing for SOLID violations, missing error handling, type safety gaps, dead code, duplicated patterns, or insufficient test coverage. Also use when remediating code to gold-standard clean architecture.
-
-'
+description: >
+  Systematic audit and remediation of a route or module to production-grade quality.
+  Use when auditing for SOLID violations, missing error handling, type safety gaps,
+  dead code, duplicated patterns, or insufficient test coverage. Also use when
+  remediating code to gold-standard clean architecture.
 ---
 
 # Code Quality Audit

@@ -1,8 +1,13 @@
 ---
 name: bun-workspaces-catalog-hoisting
-description: 'In a multi-workspace monorepo, hoist shared dependencies into Bun catalogs so version bumps are a single root edit and package families that must move together (Mastra, React renderer + types) are locked in structurally instead of by convention. Use when adding a new shared dep to 3+ workspaces, when auditing version drift, or after any framework upgrade that breaks because satellite packages hard-import newer core internals.
-
-'
+description: >
+  In a multi-workspace monorepo, hoist shared dependencies into Bun
+  catalogs so version bumps are a single root edit and package families
+  that must move together (Mastra, React renderer + types) are locked in
+  structurally instead of by convention. Use when adding a new shared
+  dep to 3+ workspaces, when auditing version drift, or after any
+  framework upgrade that breaks because satellite packages hard-import
+  newer core internals.
 ---
 
 # Bun Workspaces Catalog Hoisting

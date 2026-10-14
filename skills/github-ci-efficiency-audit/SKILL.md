@@ -1,8 +1,11 @@
 ---
 name: github-ci-efficiency-audit
-description: 'Audit a GitHub repo (or monorepo) for wasted CI minutes and missing governance, then fix the safe parts via the gh CLI. Use when CI feels slow or expensive, after a billing surprise, when hardening a repo/org, or when a green-looking pipeline doesn''t actually block bad merges. Covers runner-cost auditing, caching the every-PR install, the --affected/changed-set gotchas that red unrelated PRs, and the required-status-checks ordering trap.
-
-'
+description: >
+  Audit a GitHub repo (or monorepo) for wasted CI minutes and missing governance, then fix the
+  safe parts via the gh CLI. Use when CI feels slow or expensive, after a billing surprise, when
+  hardening a repo/org, or when a green-looking pipeline doesn't actually block bad merges. Covers
+  runner-cost auditing, caching the every-PR install, the --affected/changed-set gotchas that red
+  unrelated PRs, and the required-status-checks ordering trap.
 ---
 
 # GitHub CI Efficiency & Governance Audit

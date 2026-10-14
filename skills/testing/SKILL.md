@@ -1,8 +1,10 @@
 ---
 name: testing
-description: 'Create tests following Vitest and Playwright patterns. Use when writing unit tests, integration tests, mocking Supabase, testing server actions, or running test suites. Enforces __tests__ directories, repository mocking, and test data cleanup.
-
-'
+description: >
+  Create tests following Vitest and Playwright patterns. Use when writing
+  unit tests, integration tests, mocking Supabase, testing server actions,
+  or running test suites. Enforces __tests__ directories, repository mocking,
+  and test data cleanup.
 ---
 
 # Testing Patterns Skill

@@ -1,8 +1,12 @@
 ---
 name: code-review
-description: 'Run educational code reviews against your project''s quality standards. Use when reviewing PRs, checking current branch before pushing, or doing batch quality sweeps across all open PRs. Applies observability, testing, SOLID, type safety, security, business logic, and clean code checks with pass/fail verdicts. Produces actionable findings with real-world impact explanations, not just "best practice" citations.
-
-'
+description: >
+  Run educational code reviews against your project's quality standards.
+  Use when reviewing PRs, checking current branch before pushing, or doing
+  batch quality sweeps across all open PRs. Applies observability, testing,
+  SOLID, type safety, security, business logic, and clean code checks with
+  pass/fail verdicts. Produces actionable findings with real-world impact
+  explanations, not just "best practice" citations.
 ---
 
 # Code Review

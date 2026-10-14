@@ -1,8 +1,10 @@
 ---
 name: security-and-compliance
-description: 'Enforce security standards including RLS policies, webhook signature verification, Zod validation, environment variable safety, GDPR consent, and SOC 2 compliance. Use when adding tables, webhook handlers, server actions, authentication, or preparing for security audits. Prevents XSS, injection, and data leakage.
-
-'
+description: >
+  Enforce security standards including RLS policies, webhook signature verification,
+  Zod validation, environment variable safety, GDPR consent, and SOC 2 compliance.
+  Use when adding tables, webhook handlers, server actions, authentication, or
+  preparing for security audits. Prevents XSS, injection, and data leakage.
 ---
 
 # Security & Compliance Skill

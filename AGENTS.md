@@ -17,7 +17,7 @@ the public engineering playbook.
 - Put detailed domain references in `references/`, deterministic helpers in
   `scripts/`, and output material in `assets/`.
 - Do not maintain divergent manual copies under consuming repositories.
-- Run the repository validation before publishing or projecting skills.
+- Run `ruby scripts/check_skill_frontmatter.rb` before publishing or projecting skills.
 - Run `ruby scripts/consolidate_skill_metadata.rb` when migrating legacy
   frontmatter, then copy the catalog into the consuming website.
 - Never copy client identifiers, credentials, or confidential incidents into a

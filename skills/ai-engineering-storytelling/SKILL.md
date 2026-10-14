@@ -1,8 +1,13 @@
 ---
 name: ai-engineering-storytelling
-description: 'Use whenever you finish a non-trivial fix, refactor, audit, or decomposition. Watches the live session for moments where AI-skill discipline produced an outcome that humans would have missed (catching a real bug during an unrelated audit, decomposing a 1300-line file via a documented pattern, composing skills to avoid a band-aid). Captures those moments as ready-to-publish content artifacts: a blog post, a lead magnet outline, social copy, and a video concept.
-
-'
+description: >
+  Use whenever you finish a non-trivial fix, refactor, audit, or decomposition.
+  Watches the live session for moments where AI-skill discipline produced an
+  outcome that humans would have missed (catching a real bug during an
+  unrelated audit, decomposing a 1300-line file via a documented pattern,
+  composing skills to avoid a band-aid). Captures those moments as
+  ready-to-publish content artifacts: a blog post, a lead magnet outline,
+  social copy, and a video concept.
 ---
 
 # AI Engineering Storytelling

@@ -1,8 +1,13 @@
 ---
 name: print-report-pagination
-description: 'Paginate multi-page PDFs generated from HTML or markdown (Puppeteer, Playwright, wkhtmltopdf, weasyprint, react-pdf print CSS) by what you FORBID from breaking, not where you force breaks. Let long unboxed prose flow across pages; never split a boxed element, orphan a heading, or cut a single bullet. Use when building any report/invoice/statement/export PDF, when a generated PDF has half-cards or stranded headings at page edges, or when reviewing print/paged-media CSS.
-
-'
+description: >
+  Paginate multi-page PDFs generated from HTML or markdown (Puppeteer,
+  Playwright, wkhtmltopdf, weasyprint, react-pdf print CSS) by what you FORBID
+  from breaking, not where you force breaks. Let long unboxed prose flow across
+  pages; never split a boxed element, orphan a heading, or cut a single bullet.
+  Use when building any report/invoice/statement/export PDF, when a generated
+  PDF has half-cards or stranded headings at page edges, or when reviewing
+  print/paged-media CSS.
 ---
 
 # Print Report Pagination

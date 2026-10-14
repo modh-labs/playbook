@@ -1,8 +1,13 @@
 ---
 name: prove-your-telemetry
-description: 'Instrumentation fails silently, and its failure looks exactly like good news. An absent field reads as "nothing to report", a quiet dashboard reads as "nothing is wrong", a low issue count reads as "we fixed it". Before trusting any of those, read a real emitted event and confirm it carries what you think. Use when adding or changing logging/error capture, when an error report has no useful detail, when a metric or dashboard is suspiciously quiet, when an error "stopped happening" on its own, or when a shipped fix cannot be confirmed.
-
-'
+description: >
+  Instrumentation fails silently, and its failure looks exactly like good news.
+  An absent field reads as "nothing to report", a quiet dashboard reads as
+  "nothing is wrong", a low issue count reads as "we fixed it". Before trusting
+  any of those, read a real emitted event and confirm it carries what you think.
+  Use when adding or changing logging/error capture, when an error report has no
+  useful detail, when a metric or dashboard is suspiciously quiet, when an error
+  "stopped happening" on its own, or when a shipped fix cannot be confirmed.
 ---
 
 # Prove Your Telemetry
