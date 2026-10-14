@@ -1,19 +1,8 @@
 ---
 name: dedup-key-completeness
-description: >
-  A de-duplication, idempotency, or uniqueness guard must key on every dimension
-  that makes two records legitimately distinct. A missing dimension silently
-  collapses separate records into one (a lost write with no error). Use when
-  writing an upsert, an onConflict target, a unique constraint, a "have we seen
-  this already?" time window, or any "skip if it exists" guard — and when a bug
-  report says "my second booking/order/ticket disappeared or merged into the first."
-type: rigid
-tier: backend
-icon: fingerprint
-title: "Dedup Key Completeness"
-seo_title: "Dedup Key Completeness — Why Your Second Record Silently Disappears"
-seo_description: "A dedup or idempotency guard must key on every dimension that makes two records distinct. Miss one and you silently merge legitimately-separate records — no error, just a lost row and an unfalsifiable support thread."
-keywords: ["idempotency", "deduplication", "unique constraint", "upsert", "onConflict", "lost write", "data integrity"]
+description: 'A de-duplication, idempotency, or uniqueness guard must key on every dimension that makes two records legitimately distinct. A missing dimension silently collapses separate records into one (a lost write with no error). Use when writing an upsert, an onConflict target, a unique constraint, a "have we seen this already?" time window, or any "skip if it exists" guard — and when a bug report says "my second booking/order/ticket disappeared or merged into the first."
+
+'
 ---
 
 # Dedup Key Completeness

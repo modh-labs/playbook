@@ -1,12 +1,6 @@
 ---
 name: source-export-internal-packages
-description: >
-  Internal-only TypeScript packages in a monorepo should export source, not a
-  compiled dist/. A built artifact silently goes stale when its source changes
-  and can ship outdated types to production. Activates when adding/auditing a
-  workspace package's build setup, when a just-added export isn't visible to a
-  dependent until rebuild, or when reviewing a package that has a `build` script
-  + `dist/` exports but is consumed only by other buildable apps.
+description: Internal-only TypeScript packages in a monorepo should export source, not a compiled dist/. A built artifact silently goes stale when its source changes and can ship outdated types to production. Activates when adding/auditing a workspace package's build setup, when a just-added export isn't visible to a dependent until rebuild, or when reviewing a package that has a `build` script + `dist/` exports but is consumed only by other buildable apps.
 ---
 
 # Source-Export Internal Packages

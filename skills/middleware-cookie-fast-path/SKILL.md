@@ -1,13 +1,6 @@
 ---
 name: middleware-cookie-fast-path
-description: >
-  Eliminate post-hydration fetch waterfalls on edge-cached pages. When a
-  client component needs request-scoped data (geo, timezone, AB variant,
-  feature flag) and the page is edge-cached, stamp a client-readable
-  cookie in middleware so the client reads the value synchronously.
-  Use when edge-cached pages depend on request-scoped data, when a
-  fetch-after-hydration is blocking a third-party script, or when N
-  components are firing the same `/api/something` request in parallel.
+description: Eliminate post-hydration fetch waterfalls on edge-cached pages. When a client component needs request-scoped data (geo, timezone, AB variant, feature flag) and the page is edge-cached, stamp a client-readable cookie in middleware so the client reads the value synchronously. Use when edge-cached pages depend on request-scoped data, when a fetch-after-hydration is blocking a third-party script, or when N components are firing the same `/api/something` request in parallel.
 ---
 
 # Middleware Cookie Fast Path

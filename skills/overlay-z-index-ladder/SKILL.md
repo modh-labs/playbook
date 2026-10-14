@@ -1,20 +1,8 @@
 ---
 name: overlay-z-index-ladder
-description: >
-  Maintain one documented z-index ladder for overlay tiers (base → sheet →
-  dialog → floating content → toast → blocking alert). Every floating primitive
-  (dropdown, menu, popover, select, tooltip, hover-card) must sit in the right
-  tier, and an actionable overlay must outrank a passive one. Use when two
-  overlays can be open at once, when a menu/submenu renders under something, when
-  a dropdown inside a dialog appears beneath it, when adding a portal/popover
-  component, or auditing a design system's layering.
-type: flexible
-tier: frontend
-icon: layers
-title: "Overlay Z-Index Ladder"
-seo_title: "Overlay Z-Index Ladder — Why Your Menu Renders Behind a Tooltip"
-seo_description: "Body-portaled overlays share one stacking context, so the higher z-index wins regardless of DOM order. Keep one documented tier ladder, put every floating primitive in the right tier, and make actionable overlays outrank passive ones."
-keywords: ["z-index", "stacking context", "portal", "overlay", "dropdown", "design system", "shadcn", "radix"]
+description: 'Maintain one documented z-index ladder for overlay tiers (base → sheet → dialog → floating content → toast → blocking alert). Every floating primitive (dropdown, menu, popover, select, tooltip, hover-card) must sit in the right tier, and an actionable overlay must outrank a passive one. Use when two overlays can be open at once, when a menu/submenu renders under something, when a dropdown inside a dialog appears beneath it, when adding a portal/popover component, or auditing a design system''s layering.
+
+'
 ---
 
 # Overlay Z-Index Ladder

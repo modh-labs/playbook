@@ -1,0 +1,2262 @@
+{
+  "$schema": "./skill-catalog.schema.json",
+  "generated_at": "2026-07-31",
+  "skills": {
+    "ai-engineering-storytelling": {
+      "tier": "process",
+      "icon": "book-open",
+      "title": "AI Engineering Storytelling",
+      "seo_title": "AI Engineering Storytelling — Modh Skill",
+      "seo_description": "Capture and publish the moments where AI-skill discipline catches bugs and improves architecture. Turn day-to-day engineering wins into demand for AI-augmented engineering.",
+      "keywords": [
+        "AI skills",
+        "case study",
+        "engineering content",
+        "AI augmentation",
+        "code quality storytelling"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "auth-webhook-race": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Auth Webhook Race",
+      "seo_title": "Auth Webhook Race | MODH Engineering Skill",
+      "seo_description": "Close the race between auth-provider session JWTs (synchronous) and auth-provider webhooks (asynchronous) on first authenticated touch. Use when adding any database table that mirrors data from Clerk, Auth0, WorkOS, or similar identity providers — or when debugging FK violations, silently dropped attribution, or \"data missing on signup\" bugs.\n",
+      "keywords": [
+        "auth",
+        "webhook",
+        "race"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "background-job-right-sizing": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Background Job Right Sizing",
+      "seo_title": "Background Job Right Sizing | MODH Engineering Skill",
+      "seo_description": "Choose the LIGHTEST durable mechanism a background/async/side-effect job actually needs, instead of reaching for a full workflow engine by reflex. A four-rung ladder — in-process fire-and-forget → durable queue → workflow engine → dedicated orchestrator — routed by four axes: durability, step count, concurrency shape, and cross-app/bus membership. Activates when adding any background job, emitting a side-effect from a request handler, choosing between Vercel Queues / Workflows / Inngest / Temporal / SQS, or auditing an existing job fleet for over-engineering (\"do we still need the orchestrator for this?\").",
+      "keywords": [
+        "background",
+        "job",
+        "right",
+        "sizing"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "blast-radius": {
+      "type": "flexible",
+      "tier": "quality",
+      "vendored": "pstack",
+      "icon": "radar",
+      "title": "Blast Radius",
+      "seo_title": "Blast Radius - Modh Engineering Skill",
+      "seo_description": "Find what a change breaks somewhere else and prove it by running real code.",
+      "keywords": [
+        "impact analysis",
+        "regression",
+        "code review",
+        "refactoring"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "bug-cleanup-triage": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Bug Cleanup Triage",
+      "seo_title": "Bug Cleanup Triage | MODH Engineering Skill",
+      "seo_description": "Framework for backlog bug cleanup sessions. Triage is three sequential activities — Linear hygiene, root-cause investigation, and code fixing — that must be executed in order as a hard phase gate. Includes git log pre-flight, Sentry module-tag verification, and umbrella breakdown auto-detection. Use when planning to clean up N bugs from a backlog, before dispatching research agents, or when a ticket has been In Progress for weeks without shipping.",
+      "keywords": [
+        "bug",
+        "cleanup",
+        "triage"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "bun-workspaces-catalog-hoisting": {
+      "type": "rigid",
+      "tier": "backend",
+      "icon": "package",
+      "title": "Bun Workspaces Catalog Hoisting",
+      "seo_title": "Bun Catalogs - Single Source of Truth for Monorepo Deps",
+      "seo_description": "Monorepo workspaces accumulate version drift silently - until a 'low-risk' framework bump fails in a 6-workspace search-and-replace. Bun's default + named catalogs make shared deps a single root edit and turn family couplings into structural invariants.",
+      "keywords": [
+        "bun catalog",
+        "bun workspaces",
+        "monorepo version drift",
+        "named catalog",
+        "pnpm catalog",
+        "shared dependencies",
+        "version hoisting",
+        "monorepo dependency management"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "ci-pipeline": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "CI Pipeline Standards",
+      "seo_title": "CI Pipeline Standards — Modh Engineering Skill",
+      "seo_description": "Enforce CI pipeline conventions. Prevents deployment steps in CI and ensures the extensible step pattern is followed.",
+      "keywords": [
+        "CI pipeline",
+        "GitHub Actions",
+        "continuous integration",
+        "automation",
+        "quality gates"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "code-quality-audit": {
+      "tier": "backend",
+      "icon": "search-code",
+      "title": "Code Quality Audit",
+      "seo_title": "Code Quality Audit — Modh Engineering Skill",
+      "seo_description": "Systematic audit and remediation of a route or module to production-grade quality. Use when auditing for SOLID violations, missing error handling, and type safety gaps.",
+      "keywords": [
+        "code quality",
+        "audit",
+        "SOLID",
+        "clean architecture",
+        "refactoring"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "code-review": {
+      "tier": "universal",
+      "icon": "search-check",
+      "title": "Code Review",
+      "seo_title": "Code Review — Modh Engineering Skill",
+      "seo_description": "Educational code review skill for AI agents. Seven review dimensions, pass/fail verdicts, and actionable findings with real-world impact explanations.",
+      "keywords": [
+        "code review",
+        "pull request review",
+        "quality audit",
+        "SOLID",
+        "observability",
+        "security",
+        "type safety"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "code-quality-audit",
+        "testing-strategy",
+        "typescript-strict"
+      ],
+      "related_tools": [
+        "code-quality-audit",
+        "pull-request",
+        "testing",
+        "security-and-compliance",
+        "observability"
+      ]
+    },
+    "codebase-design": {
+      "type": "flexible",
+      "tier": "meta",
+      "vendored": "mattpocock",
+      "icon": "layers",
+      "title": "Codebase Design",
+      "seo_title": "Codebase Design - Modh Engineering Skill",
+      "seo_description": "Shared vocabulary for designing deep modules and placing seams.",
+      "keywords": [
+        "deep modules",
+        "interface design",
+        "testability",
+        "refactoring"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "control-flow-exceptions": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Control Flow Exceptions",
+      "seo_title": "Control Flow Exceptions | MODH Engineering Skill",
+      "seo_description": "Some \"errors\" are control flow, not failures. `redirect()` and `notFound()` in Next.js work by THROWING — a naive `try/catch` swallows the signal, cancels the navigation, and renders the internal digest string (\"NEXT_REDIRECT;...\") to the user. Any `catch` block wrapping code that might redirect MUST call `unstable_rethrow(error)` as its first line. Triggers on `try/catch` around a server action, Server Component, or route handler in Next.js App Router.",
+      "keywords": [
+        "control",
+        "flow",
+        "exceptions"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "cost-to-serve-audit": {
+      "tier": "universal",
+      "icon": "gauge",
+      "title": "Cost to Serve Audit",
+      "seo_title": "Cost to Serve Audit: Read the Vendor's Meter Before You Price",
+      "seo_description": "Usage-billed vendors bill by their own meter, and app records drift from it. Measure cost per customer from invoices and vendor signals, find the break-even usage for each price, and fix setup leaks before switching vendors.",
+      "keywords": [
+        "cost to serve",
+        "unit economics",
+        "gross margin",
+        "vendor costs",
+        "usage-based pricing",
+        "partner pricing",
+        "cogs",
+        "vendor invoice",
+        "stay or leave"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "cron-monitor-checkin": {
+      "type": "rigid",
+      "tier": "backend",
+      "icon": "heart-pulse",
+      "title": "Cron Monitor Check-Ins",
+      "seo_title": "Cron Monitor Check-Ins — Why Your Monitor Cries Wolf",
+      "seo_description": "A heartbeat monitor with no producer doesn't fail safe — it reports a permanent false outage. Wire every scheduled job to a captureCheckIn lifecycle, or delete the orphaned monitor.",
+      "keywords": [
+        "sentry cron monitor",
+        "missed check-in",
+        "captureCheckIn",
+        "vercel cron sentry",
+        "orphaned monitor",
+        "cron heartbeat",
+        "phantom outage",
+        "monitor_check_in_failure"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "cross-editor-setup": {
+      "tier": "universal",
+      "icon": "settings-2",
+      "title": "Cross-Editor AI Setup",
+      "seo_title": "Cross-Editor AI Setup — Modh Engineering Skill",
+      "seo_description": "Ensure AI configuration works across Claude Code, Cursor, Copilot, Windsurf, and Codex. Enforces the @import convention and single-source-of-truth strategy.",
+      "keywords": [
+        "cross-editor",
+        "AI setup",
+        "AGENTS.md",
+        "Claude Code",
+        "Cursor"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "dark-gate-flip-readiness": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Dark Gate Flip Readiness",
+      "seo_title": "Dark Gate Flip Readiness | MODH Engineering Skill",
+      "seo_description": "Safely replace a hot computed/derived read with a cheaper persisted-or-SQL projection by shipping it DARK behind a flag, pinned by an automated source-of-truth parity check + a drift invariant + a bounded backfill, then flipping on a canary. Activates when optimizing a slow read path by moving derivation (status, scoring, rollups) into SQL or a persisted column, or any \"make the hot read cheaper without changing results\" rewrite.",
+      "keywords": [
+        "dark",
+        "gate",
+        "flip",
+        "readiness"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "datetime-patterns": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Datetime Patterns",
+      "seo_title": "Datetime Patterns | MODH Engineering Skill",
+      "seo_description": "Ensure correct timezone handling for all date/time displays, emails, and notifications. Use when formatting dates, sending scheduled emails, displaying events, or working with Intl.DateTimeFormat. Prevents date boundary bugs and timezone confusion in multi-timezone SaaS applications.\n",
+      "keywords": [
+        "datetime",
+        "patterns"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "debug-hmr-stale-bundle": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Debug Hmr Stale Bundle",
+      "seo_title": "Debug Hmr Stale Bundle | MODH Engineering Skill",
+      "seo_description": "Diagnose and fix \"module factory is not available. It might have been deleted in an HMR update\" errors in Next.js + Turbopack dev. Use when you see module-evaluation errors pointing at innocent import lines, empty-object error boundary logs, or inexplicable route behavior that differs between browsers or subdomains. Activates when the root cause is a stale bundle in **browser storage**, not a code bug.",
+      "keywords": [
+        "debug",
+        "hmr",
+        "stale",
+        "bundle"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "dedup-key-completeness": {
+      "type": "rigid",
+      "tier": "backend",
+      "icon": "fingerprint",
+      "title": "Dedup Key Completeness",
+      "seo_title": "Dedup Key Completeness — Why Your Second Record Silently Disappears",
+      "seo_description": "A dedup or idempotency guard must key on every dimension that makes two records distinct. Miss one and you silently merge legitimately-separate records — no error, just a lost row and an unfalsifiable support thread.",
+      "keywords": [
+        "idempotency",
+        "deduplication",
+        "unique constraint",
+        "upsert",
+        "onConflict",
+        "lost write",
+        "data integrity"
+      ]
+    },
+    "design-taste": {
+      "tier": "universal",
+      "icon": "palette",
+      "title": "Premium UI Design Engineering",
+      "seo_title": "Design Taste Skill — Premium UI Patterns That Override AI Defaults",
+      "seo_description": "Override default AI design biases with tunable dials for variance, motion, density, and color. Detect and eliminate generic AI aesthetic patterns.",
+      "keywords": [
+        "UI design",
+        "design engineering",
+        "AI design patterns",
+        "premium UI"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+        "07-frontend-craft/design-standards",
+        "07-frontend-craft/component-architecture"
+      ],
+      "related_tools": [
+        "engineering-health-check"
+      ]
+    },
+    "diagnosing-bugs": {
+      "type": "flexible",
+      "tier": "quality",
+      "vendored": "mattpocock",
+      "icon": "bug",
+      "title": "Diagnosing Bugs",
+      "seo_title": "Diagnosing Bugs - Modh Engineering Skill",
+      "seo_description": "Diagnosis loop for hard bugs and performance regressions.",
+      "keywords": [
+        "debugging",
+        "root cause",
+        "performance",
+        "regression"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "doc-audit": {
+      "tier": "process",
+      "icon": "file-text",
+      "title": "Documentation Audit",
+      "seo_title": "Documentation Audit — Modh Engineering Skill",
+      "seo_description": "Audit and maintain documentation coverage across any codebase using the three-layer system. Finds gaps, stale references, and JSDoc coverage issues.",
+      "keywords": [
+        "documentation",
+        "audit",
+        "AGENTS.md",
+        "JSDoc",
+        "coverage"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "documentation-architecture": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Documentation Architecture",
+      "seo_title": "Documentation Architecture | MODH Engineering Skill",
+      "seo_description": "Guide documentation creation and placement using the three-layer system. Use when adding new features, patterns, runbooks, integrations, or any work that should be documented. Ensures the right docs are created in the right places with the correct audience targeting. Keeps human docs and AI agent skills in sync.\n",
+      "keywords": [
+        "documentation",
+        "architecture"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "domain-modeling": {
+      "type": "flexible",
+      "tier": "meta",
+      "vendored": "mattpocock",
+      "icon": "boxes",
+      "title": "Domain Modeling",
+      "seo_title": "Domain Modeling - Modh Engineering Skill",
+      "seo_description": "Build and sharpen a project's domain vocabulary, CONTEXT.md, and ADRs.",
+      "keywords": [
+        "domain model",
+        "ubiquitous language",
+        "ADR",
+        "glossary"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "e2e-testability": {
+      "tier": "react",
+      "icon": "accessibility",
+      "title": "E2E Testability & Accessible UI",
+      "seo_title": "E2E Testability & Accessible UI — Modh Engineering Skill",
+      "seo_description": "Write resilient Playwright e2e tests by building testable React UIs with semantic HTML, ARIA roles, and accessible names. Eliminate flaky tests with web-first assertions and Page Object fixtures.",
+      "keywords": [
+        "playwright",
+        "e2e",
+        "testing",
+        "accessibility",
+        "aria",
+        "testability",
+        "locators"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "eng-chief-of-staff": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Eng Chief Of Staff",
+      "seo_title": "Eng Chief Of Staff | MODH Engineering Skill",
+      "seo_description": "A consolidated engineering chief-of-staff routine for a founder or lead. One skill, run on a few schedules, that sweeps team chat for what needs a human, sorts every item into prioritise / schedule / push back, keeps the issue tracker in sync and balanced across engineers, drafts the replies in the lead's voice, and renders an operations dashboard. Replaces a pile of overlapping daily and weekly report routines with one source of truth. Instantiate it per team with a small private config.",
+      "keywords": [
+        "eng",
+        "chief",
+        "of",
+        "staff"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "error-report-dedup": {
+      "tier": "backend",
+      "icon": "copy-x",
+      "title": "Error Report Dedup Marker",
+      "seo_title": "Error Report Dedup Marker — Modh Engineering Skill",
+      "seo_description": "Stop one failure from producing two error-tracker events when it passes through two handlers, using a non-enumerable Symbol marker on the Error.",
+      "keywords": [
+        "error handling",
+        "Sentry",
+        "deduplication",
+        "observability",
+        "captureException",
+        "symbol"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "feature-design": {
+      "tier": "process",
+      "icon": "lightbulb",
+      "title": "Feature Design Process",
+      "seo_title": "Feature Design Process — Modh Engineering Skill",
+      "seo_description": "Interactive feature design process from rough idea to implementation-ready spec. Enforces a hard gate — no implementation until the design is approved.",
+      "keywords": [
+        "feature design",
+        "specification",
+        "planning",
+        "design process",
+        "implementation spec"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "fix-e2e": {
+      "tier": "process",
+      "icon": "loop",
+      "title": "The E2E Fix-Loop",
+      "seo_title": "The E2E Fix-Loop — Triage Playwright Failures by Evidence, Not by Retries",
+      "seo_description": "Most teams fix flaky Playwright tests by bumping retries and adding waitForTimeout. That hides bugs; it doesn't fix them. Here's the four-rung triage ladder that distinguishes locator drift from product bugs from infra outages — and the exit criteria that prove the suite is actually green.",
+      "keywords": [
+        "playwright",
+        "e2e",
+        "flaky tests",
+        "test triage",
+        "fix loop",
+        "ci quality",
+        "test skips"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "form-builder-rhf-isolation": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Form Builder Rhf Isolation",
+      "seo_title": "Form Builder Rhf Isolation | MODH Engineering Skill",
+      "seo_description": "Use when building a dynamic form-builder (admin-facing field editor, question builder, dynamic row list) in Next.js + React Hook Form + shadcn. Prevents the cascade-rerender trap where typing in one row rerenders all rows, and the focus-loss trap where regenerating a programmatic key on keystroke remounts the input. Triggers on: `useFieldArray`, `useWatch`, dynamic field lists, question builders, form builders, row editors.",
+      "keywords": [
+        "form",
+        "builder",
+        "rhf",
+        "isolation"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "github-ci-efficiency-audit": {
+      "tier": "backend",
+      "icon": "gauge",
+      "title": "GitHub CI Efficiency & Governance Audit",
+      "seo_title": "GitHub CI Efficiency Audit — Stop Burning Actions Minutes and Close Governance Gaps",
+      "seo_description": "Find the metered jobs, uncached installs, and over-frequent crons quietly draining your CI budget, fix repo/org governance via the gh CLI, and avoid the --affected merge-ref traps that red unrelated PRs."
+    },
+    "graphql-patterns": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Graphql Patterns",
+      "seo_title": "Graphql Patterns | MODH Engineering Skill",
+      "seo_description": "Enforce Shopify-style graph-first API design for GraphQL APIs. Use when adding GraphQL types, mutations, REST endpoints, DataLoaders, or working with API apps. Enforces navigable relationships, semantic types, Relay pagination, and repository pattern.\n",
+      "keywords": [
+        "graphql",
+        "patterns"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "grill-with-docs": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "mattpocock",
+      "icon": "file-pen",
+      "title": "Grill with Docs",
+      "seo_title": "Grill with Docs - Modh Engineering Skill",
+      "seo_description": "Grill a design and record the decisions as ADRs and glossary entries.",
+      "keywords": [
+        "planning",
+        "ADR",
+        "glossary",
+        "design"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "grilling": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "mattpocock",
+      "icon": "flame",
+      "title": "Grilling",
+      "seo_title": "Grilling - Modh Engineering Skill",
+      "seo_description": "Interview the user round by round until the design tree has no open branches.",
+      "keywords": [
+        "planning",
+        "design review",
+        "requirements",
+        "stress test"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "headless-form-engine": {
+      "type": "rigid",
+      "tier": "react",
+      "icon": "layers",
+      "title": "Headless Form Engine",
+      "seo_title": "Headless Form Engine — One Controller, N Presentations, Proven Identical",
+      "seo_description": "When a form needs a second presentation (stepped, modal, mobile), don't fork the logic — extract one headless controller with an explicit typed interface and prove parity with a payload-equality test.",
+      "keywords": [
+        "headless component",
+        "form architecture",
+        "multi-step form",
+        "wizard pattern",
+        "OCP",
+        "React hooks",
+        "parity testing"
+      ]
+    },
+    "hono-patterns": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Hono Patterns",
+      "seo_title": "Hono Patterns | MODH Engineering Skill",
+      "seo_description": "Develop Hono applications efficiently using Hono CLI and best practices. Supports documentation search, API reference lookup, request testing, bundle optimization, and idiomatic Hono patterns. Use when building REST or GraphQL APIs with Hono, setting up middleware, or optimizing bundles.\n",
+      "keywords": [
+        "hono",
+        "patterns"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "how": {
+      "type": "flexible",
+      "tier": "meta",
+      "vendored": "pstack",
+      "icon": "map",
+      "title": "How",
+      "seo_title": "How - Modh Engineering Skill",
+      "seo_description": "Explain how a subsystem works, then optionally critique its architecture.",
+      "keywords": [
+        "architecture",
+        "onboarding",
+        "code walkthrough",
+        "system design"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "internal-tools-design": {
+      "tier": "universal",
+      "icon": "layout-dashboard",
+      "title": "Internal Tools Design",
+      "seo_title": "Internal Tools Design — Modh Engineering Skill",
+      "seo_description": "Use when building or modifying admin dashboards, internal tools, ops panels, or back-office UIs. Enforces scannability, data density, and dark-mode-safe patterns.",
+      "keywords": [
+        "internal tools",
+        "admin dashboard",
+        "ops panel",
+        "data density",
+        "dark mode"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "interrogate": {
+      "type": "flexible",
+      "tier": "quality",
+      "vendored": "pstack",
+      "icon": "gavel",
+      "title": "Interrogate",
+      "seo_title": "Interrogate - Modh Engineering Skill",
+      "seo_description": "Adversarial review where independent model families challenge a change.",
+      "keywords": [
+        "code review",
+        "adversarial",
+        "multi-model",
+        "stress test"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "linear-ticket-hygiene": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Linear Ticket Hygiene",
+      "seo_title": "Linear Ticket Hygiene | MODH Engineering Skill",
+      "seo_description": "Sweep a Linear board into correct status: close what actually shipped (grounded in git, not vibes), enrich raw Sentry/one-line stubs into properly PRD'd tickets using live Sentry data, bucket everything (Triage -> Todo/Backlog/Done), route high-impact bug/improvements to Todo + assign the owner, and never invent detail. Use when asked to \"clean up the board\", \"get every ticket in the right status\", \"enrich the triage bucket\", \"PRD these tickets\", or after a stack lands and the board is stale.\n",
+      "keywords": [
+        "linear",
+        "ticket",
+        "hygiene"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "linear-tickets": {
+      "tier": "process",
+      "icon": "ticket",
+      "title": "Linear Ticket Standards",
+      "seo_title": "Linear Ticket Standards — Modh Engineering Skill",
+      "seo_description": "Create rich, well-documented Linear tickets with user stories, journey diagrams, architecture context, edge cases, and acceptance criteria.",
+      "keywords": [
+        "linear",
+        "tickets",
+        "user stories",
+        "acceptance criteria",
+        "issue tracking"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "metric-definition-trap": {
+      "tier": "universal",
+      "icon": "ruler",
+      "title": "The Metric Definition Trap",
+      "seo_title": "The Metric Definition Trap — Name the Population, Verify the Number",
+      "seo_description": "Every reported metric must name its population and definition, and the number must be adversarially verified against live data before it ships. Catches one-label-two-populations and gross-vs-net count inflation.",
+      "keywords": [
+        "metric definition",
+        "kpi integrity",
+        "revenue reporting",
+        "data verification",
+        "vanity metrics",
+        "gmv vs revenue",
+        "denominator",
+        "analytics audit"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "06-process/project-charter"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "middleware-cookie-fast-path": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Middleware Cookie Fast Path",
+      "seo_title": "Middleware Cookie Fast Path | MODH Engineering Skill",
+      "seo_description": "Eliminate post-hydration fetch waterfalls on edge-cached pages. When a client component needs request-scoped data (geo, timezone, AB variant, feature flag) and the page is edge-cached, stamp a client-readable cookie in middleware so the client reads the value synchronously. Use when edge-cached pages depend on request-scoped data, when a fetch-after-hydration is blocking a third-party script, or when N components are firing the same `/api/something` request in parallel.",
+      "keywords": [
+        "middleware",
+        "cookie",
+        "fast",
+        "path"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "modh-brand-system": {
+      "type": "flexible",
+      "tier": "universal",
+      "icon": "mountain",
+      "title": "Modh Brand System",
+      "seo_title": "Modh Brand System — Founder-Led Identity and Implementation",
+      "seo_description": "Apply the canonical Modh identity across websites, content, video, social profiles, and marketing assets without voice or visual drift.",
+      "keywords": [
+        "Modh",
+        "brand system",
+        "voice",
+        "design system",
+        "marketing",
+        "website"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "modh-illustration-studio": {
+      "type": "flexible",
+      "tier": "creative",
+      "icon": "image",
+      "title": "Modh Illustration Studio",
+      "seo_title": "Modh Illustration Studio — Biomes, Seasons and Social Assets",
+      "seo_description": "Generate a coherent flat landscape world across biomes, seasons, website art, banners, carousels, profile frames, and social exports.",
+      "keywords": [
+        "illustration",
+        "image generation",
+        "social media",
+        "biomes",
+        "seasons",
+        "brand art"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "modh-motion-system": {
+      "type": "flexible",
+      "tier": "frontend",
+      "icon": "move",
+      "title": "Modh Motion System",
+      "seo_title": "Modh Motion System - Clean Web and Illustration Choreography",
+      "seo_description": "Design and implement accessible Modh motion across websites, biome illustrations, social assets, launches, and video without decorative excess.",
+      "keywords": [
+        "motion design",
+        "Motion for React",
+        "GSAP",
+        "Rive",
+        "animation",
+        "scroll animation",
+        "reduced motion"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "monorepo-patterns": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Monorepo Patterns",
+      "seo_title": "Monorepo Patterns | MODH Engineering Skill",
+      "seo_description": "Turborepo monorepo build system guidance. Triggers on: turbo.json, task pipelines, dependsOn, caching, remote cache, the \"turbo\" CLI, --filter, --affected, CI optimization, environment variables, internal packages, monorepo structure/best practices, and boundaries. Use when configuring tasks/workflows/pipelines, creating packages, setting up monorepo structure, sharing code between apps, running changed/affected packages, debugging cache, or working with apps/packages directories.\n",
+      "keywords": [
+        "monorepo",
+        "patterns"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "monster-file-decomposition": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Monster File Decomposition",
+      "seo_title": "Monster File Decomposition | MODH Engineering Skill",
+      "seo_description": "When decomposing a monster file (>1000 LOC) into focused submodules in a closed-source monorepo, extract one submodule per commit AND migrate all consumer imports to the new source-of-truth path in the SAME commit. Never use re-export shims to bridge consumers. Activates on any file >1000 LOC with 2+ external consumers in a monorepo.",
+      "keywords": [
+        "monster",
+        "file",
+        "decomposition"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "navigate-before-dismiss": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Navigate Before Dismiss",
+      "seo_title": "Navigate Before Dismiss | MODH Engineering Skill",
+      "seo_description": "When a single click handler both calls `router.push(...)` and closes a Radix dismissable (Dialog, Sheet, Popover, CommandDialog, DropdownMenu), navigate FIRST and defer the dismiss to a microtask. Triggers on any Next.js App Router + Radix UI codebase, especially command palettes and \"click result to navigate\" flows. Activates on `setOpen(false)` + `router.push` in the same handler.",
+      "keywords": [
+        "navigate",
+        "before",
+        "dismiss"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "nextjs-patterns": {
+      "allowed-tools": "Read, Grep, Glob, Edit, Write",
+      "tier": "react",
+      "icon": "layers",
+      "title": "Next.js Data & Mutation Patterns",
+      "seo_title": "Next.js Data & Mutation Patterns — Modh Engineering Skill",
+      "seo_description": "Implement data fetching, server actions, and performance patterns for Next.js App Router. Enforces Server Components, repository usage, and progressive loading.",
+      "keywords": [
+        "nextjs",
+        "server actions",
+        "data fetching",
+        "app router",
+        "suspense"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "nextjs-server-client-boundary": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Nextjs Server Client Boundary",
+      "seo_title": "Nextjs Server Client Boundary | MODH Engineering Skill",
+      "seo_description": "Enforce the server/client module boundary in Next.js App Router projects. Use when creating client components, providers, hooks, or debugging \"node: protocol\" errors in Storybook/webpack/test environments. Prevents client components from importing server-side modules.",
+      "keywords": [
+        "nextjs",
+        "server",
+        "client",
+        "boundary"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "oauth-callback-pattern": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Oauth Callback Pattern",
+      "seo_title": "Oauth Callback Pattern | MODH Engineering Skill",
+      "seo_description": "Process OAuth `?code=&state=` callbacks server-side in Next.js App Router, never in a client useEffect. Use when adding or auditing OAuth integrations such as Stripe Connect, Slack, Notion, Google, Microsoft, or Zoom.",
+      "keywords": [
+        "oauth",
+        "callback",
+        "pattern"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "observability": {
+      "tier": "backend",
+      "icon": "activity",
+      "title": "Structured Logging & Observability",
+      "seo_title": "Observability Skill — Structured Logging, Sentry & Distributed Tracing",
+      "seo_description": "Stop using console.log. Enforce structured logging, domain-specific Sentry captures, and distributed tracing across your application.",
+      "keywords": [
+        "observability",
+        "sentry",
+        "structured logging",
+        "error tracking",
+        "distributed tracing"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "05-observability/structured-logging",
+        "05-observability/error-tracking",
+        "05-observability/webhook-observability"
+      ],
+      "related_tools": [
+        "engineering-health-check"
+      ]
+    },
+    "observability-cost-quota": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Observability Cost Quota",
+      "seo_title": "Observability Cost Quota | MODH Engineering Skill",
+      "seo_description": "Observability data (spans, traces, logs, profiles) is a METERED cost with a silent failure mode: when the quota is exhausted the provider drops that category while errors keep flowing, so a perf dashboard goes empty and nobody notices. Activates when traces/spans \"stopped\", a perf dashboard is empty, there's \"no recent performance data\", or you're about to raise a telemetry bill. Teaches the diagnosis (errors-live + spans-dead = quota, not outage) and the counterintuitive fix order: cut low-value emission BEFORE buying headroom.",
+      "keywords": [
+        "observability",
+        "cost",
+        "quota"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "output-enforcement": {
+      "tier": "universal",
+      "icon": "file-check",
+      "title": "Output Enforcement",
+      "seo_title": "Output Enforcement — Modh Engineering Skill",
+      "seo_description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly.",
+      "keywords": [
+        "output enforcement",
+        "code generation",
+        "LLM",
+        "completeness",
+        "no placeholders"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "overlay-z-index-ladder": {
+      "type": "flexible",
+      "tier": "react",
+      "icon": "layers",
+      "title": "Overlay Z-Index Ladder",
+      "seo_title": "Overlay Z-Index Ladder — Why Your Menu Renders Behind a Tooltip",
+      "seo_description": "Body-portaled overlays share one stacking context, so the higher z-index wins regardless of DOM order. Keep one documented tier ladder, put every floating primitive in the right tier, and make actionable overlays outrank passive ones.",
+      "keywords": [
+        "z-index",
+        "stacking context",
+        "portal",
+        "overlay",
+        "dropdown",
+        "design system",
+        "shadcn",
+        "radix"
+      ]
+    },
+    "pii-redaction-parity": {
+      "tier": "backend",
+      "icon": "shield-alert",
+      "title": "PII Redaction Egress Parity",
+      "seo_title": "PII Redaction Egress Parity — Modh Engineering Skill",
+      "seo_description": "Enforce one PII-redaction list across every egress path (Sentry events/spans/logs, structured logger), and the counterintuitive pino flat-dotted key-path trap.",
+      "keywords": [
+        "PII",
+        "redaction",
+        "pino",
+        "Sentry",
+        "OpenTelemetry",
+        "logging",
+        "observability",
+        "GDPR"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "pii-safe-error-logs": {
+      "tier": "backend",
+      "icon": "shield-alert",
+      "title": "PII-Safe Error Logs",
+      "seo_title": "PII-Safe Error Logs — Modh Engineering Skill",
+      "seo_description": "Pattern for keeping personally identifiable information out of structured logs when server errors with JSON payloads reach the UI.",
+      "keywords": [
+        "PII",
+        "error handling",
+        "logging",
+        "Sentry",
+        "GDPR",
+        "observability"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "playwright-url-polling": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Playwright Url Polling",
+      "seo_title": "Playwright Url Polling | MODH Engineering Skill",
+      "seo_description": "Prefer `expect(page).toHaveURL(regex)` polling over `page.waitForURL(regex)` when the destination page does heavy data fetching. Triggers on Playwright navigation assertions, `waitForURL` timing out, or tests that fail right after clicking into a detail/dashboard page.",
+      "keywords": [
+        "playwright",
+        "url",
+        "polling"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "print-report-pagination": {
+      "tier": "react",
+      "icon": "file-text",
+      "title": "Print Report Pagination",
+      "seo_title": "Print Report Pagination — Forbid-Don't-Force Paged Media CSS",
+      "seo_description": "Paginate HTML/markdown-to-PDF reports by forbidding bad breaks (break-inside on cards, break-after on headings) instead of forcing page breaks. Stress-test with a deliberately long render.",
+      "keywords": [
+        "print css",
+        "paged media",
+        "pdf generation",
+        "break-inside avoid",
+        "puppeteer pdf",
+        "page break",
+        "report pagination"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "progressive-disclosure-ctas": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Progressive Disclosure Ctas",
+      "seo_title": "Progressive Disclosure Ctas | MODH Engineering Skill",
+      "seo_description": "Hide optional configuration fields behind subtle \"+ Add X\" CTAs that reveal inline editors when clicked, with a LivePreview strip as the always-visible narrator of current behavior. Use when a form has more optional fields than mandatory ones, or when rarely-touched settings are cluttering a form the admin visits often.",
+      "keywords": [
+        "progressive",
+        "disclosure",
+        "ctas"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "prove-your-telemetry": {
+      "tier": "universal",
+      "icon": "shield-question",
+      "title": "Prove Your Telemetry",
+      "seo_title": "Prove Your Telemetry: Why Broken Monitoring Looks Like Good News",
+      "seo_description": "Instrumentation fails silently and its failure is indistinguishable from a healthy system. Five mechanisms that make telemetry lie, and the one question that catches all of them.",
+      "keywords": [
+        "observability",
+        "silent failure",
+        "instrumentation",
+        "error tracking",
+        "sentry",
+        "monitoring blind spot",
+        "cause chain",
+        "data scrubbing"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "05-observability/error-tracking",
+        "05-observability/structured-logging"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "provision-live-to-learn-contract": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Provision Live To Learn Contract",
+      "seo_title": "Provision Live To Learn Contract | MODH Engineering Skill",
+      "seo_description": "When an external API's exact request schema is uncertain and a dry-run skips the network, stop guessing from docs — make ONE real call and let the error response teach you the precise contract, then fix and retry. Activates when scripting create/update against an API (dashboards, webhooks, resources) whose field/enum shape you're inferring, especially when a dry-run can't validate it.",
+      "keywords": [
+        "provision",
+        "live",
+        "to",
+        "learn",
+        "contract"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "pull-request": {
+      "tier": "process",
+      "icon": "git-pull-request",
+      "title": "Pull Request Conventions",
+      "seo_title": "Pull Request Conventions — Modh Engineering Skill",
+      "seo_description": "Create pull requests with mandatory CI validation, unit tests, and rich descriptions. Runs CI before any PR and blocks creation on failure.",
+      "keywords": [
+        "pull request",
+        "code review",
+        "CI validation",
+        "git workflow",
+        "PR description"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "react-architecture": {
+      "tier": "react",
+      "icon": "component",
+      "title": "React Component Architecture",
+      "seo_title": "React Component Architecture — Modh Engineering Skill",
+      "seo_description": "React component decomposition, hook extraction, state machines, composition patterns, hydration safety, and React 19 APIs.",
+      "keywords": [
+        "react",
+        "component architecture",
+        "hooks",
+        "state machines",
+        "composition patterns"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "repository-test-backfill": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Repository Test Backfill",
+      "seo_title": "Repository Test Backfill | MODH Engineering Skill",
+      "seo_description": "Two-tier strategy for retroactively writing unit tests for a Drizzle-based repository module that has zero or sparse coverage. Tier 1 = empty-org early-return test for every public function (cheap, locks the signed-out contract). Tier 2 = deep happy-path tests for the most-used functions only. Use after a monster-file decomposition surfaces 0%-coverage submodules, or when adding tests to any uncovered repository file.",
+      "keywords": [
+        "repository",
+        "test",
+        "backfill"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "route-colocation": {
+      "tier": "react",
+      "icon": "folder-tree",
+      "title": "Route Colocation",
+      "seo_title": "Route Colocation — Modh Engineering Skill",
+      "seo_description": "Guide code organization, folder structure, and route architecture following colocation-first patterns. Enforces the 3+ routes sharing threshold and actions folder pattern.",
+      "keywords": [
+        "route colocation",
+        "folder structure",
+        "code organization",
+        "file placement",
+        "nextjs routes"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "security-and-compliance": {
+      "tier": "backend",
+      "icon": "lock",
+      "title": "Security & Compliance",
+      "seo_title": "Security & Compliance — Modh Engineering Skill",
+      "seo_description": "Enforce security standards including RLS policies, webhook signature verification, Zod validation, environment variable safety, GDPR consent, and SOC 2 compliance.",
+      "keywords": [
+        "security",
+        "compliance",
+        "RLS",
+        "GDPR",
+        "SOC 2"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "server-paginated-tables": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Server Paginated Tables",
+      "seo_title": "Server Paginated Tables | MODH Engineering Skill",
+      "seo_description": "Build data tables as URL-driven views over a Zod-typed state schema, not as components with internal state. Activates when you're building a list/table UI that might grow beyond a few hundred rows, when you see hardcoded `limit: 200` in a repository function, or when a user asks \"where's row 201?\" The URL is the source of truth; the table is a thin view; the server fetches exactly one page at a time.",
+      "keywords": [
+        "server",
+        "paginated",
+        "tables"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "shadcn-components": {
+      "allowed-tools": "Read, Grep, Glob, Edit, Write",
+      "tier": "react",
+      "icon": "square",
+      "title": "shadcn/ui Component Patterns",
+      "seo_title": "shadcn/ui Component Patterns — Modh Engineering Skill",
+      "seo_description": "Build UI components following shadcn/ui patterns. Enforces shadcn components, CSS variables, variant usage, detail view architecture, and component colocation.",
+      "keywords": [
+        "shadcn",
+        "ui components",
+        "tailwind",
+        "theming",
+        "design system"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "show-me-your-work": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "pstack",
+      "icon": "list-checks",
+      "title": "Show Me Your Work",
+      "seo_title": "Show Me Your Work - Modh Engineering Skill",
+      "seo_description": "Keep a reviewable decision trail for long-running or unattended work.",
+      "keywords": [
+        "audit trail",
+        "autonomous agents",
+        "decision log",
+        "review"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "source-export-internal-packages": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Source Export Internal Packages",
+      "seo_title": "Source Export Internal Packages | MODH Engineering Skill",
+      "seo_description": "Internal-only TypeScript packages in a monorepo should export source, not a compiled dist/. A built artifact silently goes stale when its source changes and can ship outdated types to production. Activates when adding/auditing a workspace package's build setup, when a just-added export isn't visible to a dependent until rebuild, or when reviewing a package that has a `build` script + `dist/` exports but is consumed only by other buildable apps.",
+      "keywords": [
+        "source",
+        "export",
+        "internal",
+        "packages"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "stale-bot-pr-triage": {
+      "tier": "process",
+      "icon": "git-pull-request",
+      "title": "Stale Bot-PR Triage",
+      "seo_title": "Stale Bot-PR Triage — Stop Merging AI Fix PRs That Regress Your Code",
+      "seo_description": "Sentry Seer, Dependabot, and Cursor open fix PRs against a stale snapshot. Before you merge, diff intent against current main — they're often already fixed, or they silently undo a guard you added on purpose.",
+      "keywords": [
+        "sentry seer",
+        "dependabot",
+        "bot pr",
+        "auto-fix pr",
+        "stale branch",
+        "ai code review",
+        "pr triage"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "06-process/code-review"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "status-rollup-chip": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Status Rollup Chip",
+      "seo_title": "Status Rollup Chip | MODH Engineering Skill",
+      "seo_description": "When an admin table shows N raw state columns that the admin only cares about as a rolled-up \"is this entity ready?\" question, collapse them into one derived chip + popover nudge + row-click detail sheet. Use when a table is overflowing horizontally, or when admins repeatedly scan 5+ columns just to answer a single readiness question.",
+      "keywords": [
+        "status",
+        "rollup",
+        "chip"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "stream-behind-first-step": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Stream Behind First Step",
+      "seo_title": "Stream Behind First Step | MODH Engineering Skill",
+      "seo_description": "Don't suspend a whole multi-step component on data only a later step needs. When a wizard / booking form / checkout consumes a slow server-prefetched promise via React `use()` at the top of the component, the entire tree suspends — blocking the first interactive step behind data it doesn't use yet. Use when a server-passed promise is consumed with top-level `use()`, when the first step shows a full-screen skeleton while a slow upstream (availability, search, recommendations) resolves, or when a \"loading\" bug and an unrelated-looking post-load \"snap\"/re-render appear together.",
+      "keywords": [
+        "stream",
+        "behind",
+        "first",
+        "step"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "supabase-patterns": {
+      "allowed-tools": "Read, Grep, Glob, Edit, Write, Bash",
+      "tier": "backend",
+      "icon": "database",
+      "title": "Supabase & Repository Patterns",
+      "seo_title": "Supabase & Repository Patterns — Modh Engineering Skill",
+      "seo_description": "Implement database access and schema management with Supabase. Enforces repository pattern, select *, schema-first workflow, and org isolation via RLS.",
+      "keywords": [
+        "supabase",
+        "repository pattern",
+        "database",
+        "RLS",
+        "migrations"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "surface-upstream-errors": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Surface Upstream Errors",
+      "seo_title": "Surface Upstream Errors | MODH Engineering Skill",
+      "seo_description": "A third-party SDK throws a rich, structured error (HTTP status, machine code, human-readable long message, trace id, per-item failures) and your catch block flattens it into \"Something went wrong. Please try again.\" Now the user can't act on it and your logs can't be queried by cause — you've thrown away the diagnosis at the exact moment it mattered. Parse the structured error, surface the real reason in the UI, and tag observability by the upstream code. Corollary: when the upstream call is an ATOMIC bulk endpoint, pre-filter known conflicts so one bad item can't fail the whole batch. Triggers on any catch block around a call to an external API/SDK (Stripe, Clerk, Nylas, payment/auth/calendar/email providers), and on any use of a provider's bulk/batch endpoint.",
+      "keywords": [
+        "surface",
+        "upstream",
+        "errors"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "technical-writing": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "pstack",
+      "icon": "pen-tool",
+      "title": "Technical Writing",
+      "seo_title": "Technical Writing - Modh Engineering Skill",
+      "seo_description": "Diataxis structure, Google style, STE instructions, Global English syntax.",
+      "keywords": [
+        "documentation",
+        "RFC",
+        "readme",
+        "commit message",
+        "style guide"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "testing": {
+      "tier": "backend",
+      "icon": "test-tube",
+      "title": "Testing Strategy",
+      "seo_title": "Testing Strategy — Modh Engineering Skill",
+      "seo_description": "Create tests following Vitest and Playwright patterns. Enforces __tests__ directories, repository mocking, and test data cleanup.",
+      "keywords": [
+        "testing",
+        "vitest",
+        "playwright",
+        "unit tests",
+        "mocking"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "type-cast-silent-bugs": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Type Cast Silent Bugs",
+      "seo_title": "Type Cast Silent Bugs | MODH Engineering Skill",
+      "seo_description": "Type-assertion casts between a database query and consumer code (`as any`, `as unknown as { ... }`, `useState<any[]>`) are silent-bug indicators — they hide column/table drift from the type system. Activates during any type-tightening migration (Drizzle migration, schema rename, ORM swap), any audit that grep-counts these casts, or any \"this dashboard's been broken forever, why hasn't it alerted?\" investigation.",
+      "keywords": [
+        "type",
+        "cast",
+        "silent",
+        "bugs"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "unslop": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "pstack",
+      "icon": "sparkles",
+      "title": "Unslop",
+      "seo_title": "Unslop: Cut AI Tells From Any Writing",
+      "seo_description": "Cut AI tells from any writing.",
+      "keywords": [
+        "AI writing",
+        "editing",
+        "prose",
+        "style",
+        "em dash"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "verifying-commit-scope": {
+      "tier": "process",
+      "icon": "workflow",
+      "title": "Verifying Commit Scope",
+      "seo_title": "Verifying Commit Scope | MODH Engineering Skill",
+      "seo_description": "Pre-commit auto-formatters can sweep concurrent agents' unstaged work into your commit when stash/restore mishandles a mixed working tree. Run `git diff --cached --stat` before every commit, treat any unexpected file count as stop-the-world, and recover with `git reset --soft HEAD~1`. Triggers when running `git commit` in any repo with husky/lefthook + lint-staged + auto-format `--write`, especially with concurrent unstaged work in the tree.",
+      "keywords": [
+        "verifying",
+        "commit",
+        "scope"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "wait-what": {
+      "type": "flexible",
+      "tier": "process",
+      "vendored": "mattpocock",
+      "icon": "help-circle",
+      "title": "Wait What",
+      "seo_title": "Wait What - Modh Engineering Skill",
+      "seo_description": "Stop. That last message did not land. Re-pitch it.",
+      "keywords": [
+        "clarity",
+        "jargon",
+        "explanation"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "webhook-architecture": {
+      "tier": "backend",
+      "icon": "webhook",
+      "title": "SOLID Webhook Architecture",
+      "seo_title": "SOLID Webhook Architecture — Modh Engineering Skill",
+      "seo_description": "Enforce SOLID principles in webhook architecture for maintainability and extensibility. Enforces registry pattern, single responsibility, and dependency injection.",
+      "keywords": [
+        "webhooks",
+        "SOLID",
+        "handler registry",
+        "dependency injection",
+        "event handlers"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "webhook-observability": {
+      "type": "flexible",
+      "tier": "backend",
+      "icon": "activity",
+      "title": "Webhook Observability",
+      "seo_title": "Webhook Observability — Lifecycle Logging, Duration Tracing & Idempotency",
+      "seo_description": "Structured observability for webhook handlers. Logger lifecycle, automatic duration tracking, error tracker integration, and idempotency patterns.",
+      "keywords": [
+        "webhooks",
+        "observability",
+        "logging",
+        "tracing",
+        "idempotency",
+        "Sentry",
+        "duration tracking"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "05-observability/webhook-observability",
+        "02-architecture/webhook-architecture"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "webhook-patterns": {
+      "type": "flexible",
+      "tier": "backend",
+      "icon": "webhook",
+      "title": "SOLID Webhook Patterns",
+      "seo_title": "SOLID Webhook Patterns — Registry, SRP & Dependency Injection",
+      "seo_description": "Enforce SOLID principles in webhook architecture. Handler registry pattern, one handler per event, dependency injection, and Zod validation.",
+      "keywords": [
+        "webhooks",
+        "SOLID",
+        "handler registry",
+        "dependency injection",
+        "event handlers",
+        "Zod"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+        "02-architecture/webhook-architecture"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "webhook-temporal-guard": {
+      "type": "rigid",
+      "tier": "backend",
+      "icon": "clock-alert",
+      "title": "Webhook Temporal Guard",
+      "seo_title": "Webhook Temporal Guard — Why Past-Time Payloads Pollute Your DB",
+      "seo_description": "Webhooks announce state from a past moment. When the payload carries a time the action depends on, that time may have moved into the past during delivery — verify before mutating, or you'll write wrong-but-silent state into your DB and customer notifications.",
+      "keywords": [
+        "webhook past time",
+        "webhook delivery delay",
+        "calendar webhook stale",
+        "stripe webhook stale",
+        "event.updated past start_time",
+        "webhook temporal validation",
+        "stale webhook payload"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "weekly-infra-health-review": {
+      "tier": "process",
+      "icon": "heart-pulse",
+      "title": "Weekly Infra Health Review",
+      "seo_title": "Weekly Infra Health Review — Interpret Telemetry, Don't Just Collect It",
+      "seo_description": "A dashboard shows numbers; it never says what changed or what to do. Run a recurring agent that diffs your infra signals week-over-week and posts a short digest ending in 1-3 prioritized actions.",
+      "keywords": [
+        "infra health",
+        "weekly digest",
+        "week-over-week",
+        "telemetry interpretation",
+        "config drift",
+        "connection capacity",
+        "telemetry quota",
+        "web vitals",
+        "runbook",
+        "scheduled agent",
+        "areas of improvement"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "05-observability/error-tracking"
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "why": {
+      "type": "flexible",
+      "tier": "meta",
+      "vendored": "pstack",
+      "icon": "search",
+      "title": "Why",
+      "seo_title": "Why - Modh Engineering Skill",
+      "seo_description": "Cited answer on why code is shaped the way it is, from every evidence source.",
+      "keywords": [
+        "design rationale",
+        "postmortem",
+        "archaeology",
+        "decision history"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "wizard": {
+      "type": "flexible",
+      "tier": "infrastructure",
+      "vendored": "mattpocock",
+      "icon": "wand",
+      "title": "Wizard",
+      "seo_title": "Wizard - Modh Engineering Skill",
+      "seo_description": "Generate an interactive bash wizard for steps only a human can perform.",
+      "keywords": [
+        "provisioning",
+        "setup",
+        "credentials",
+        "CI secrets",
+        "onboarding"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "write-criticality": {
+      "tier": "backend",
+      "icon": "shield-check",
+      "title": "Write Criticality Classification",
+      "seo_title": "Write Criticality — Classify DB Writes to Eliminate False Data-Loss Alarms",
+      "seo_description": "Stop alarming on every failed write. Classify writes by durability requirement — tracking, retriable, or critical — and match alarm severity to actual risk.",
+      "keywords": [
+        "write criticality",
+        "database writes",
+        "false alarms",
+        "retry logic",
+        "sentry"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+        "05-observability/error-tracking"
+      ],
+      "related_tools": [
+        "write-criticality-framework"
+      ]
+    },
+    "writing-for-agents": {
+      "type": "flexible",
+      "tier": "meta",
+      "vendored": "mattpocock",
+      "icon": "bot",
+      "title": "Writing for Agents",
+      "seo_title": "Writing for Agents - Modh Engineering Skill",
+      "seo_description": "How to write a document an agent consumes: skills, AGENTS.md, CLAUDE.md.",
+      "keywords": [
+        "skill authoring",
+        "prompt engineering",
+        "AGENTS.md",
+        "context"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "build-time-reads": {
+      "tier": "react",
+      "icon": "file-search",
+      "title": "Build-Time Reads",
+      "seo_title": "Build-Time Reads: Prerendered Pages Freeze the Build's Env",
+      "seo_description": "Prerendered Next.js pages read env vars at build time. Declare them in turbo.json so build and runtime agree, and read files in a shape the bundler can trace.",
+      "keywords": [
+        "Next.js",
+        "Turborepo",
+        "environment variables",
+        "prerendering",
+        "turbo.json",
+        "file tracing",
+        "build"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "catalog-driven-resolver": {
+      "tier": "universal",
+      "icon": "table",
+      "title": "Catalog-Driven Resolver",
+      "seo_title": "Catalog-Driven Resolver: A Policy Table Nobody Reads Is a Comment",
+      "seo_description": "When a catalog declares a per-type rule but each call site computes the result itself, the table and production drift apart. Make the table the only code path that produces the result.",
+      "keywords": [
+        "policy table",
+        "registry",
+        "config map",
+        "resolver",
+        "single source of truth",
+        "refactoring"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "customer-language": {
+      "tier": "process",
+      "icon": "message-square",
+      "title": "Customer Language",
+      "seo_title": "Customer Language: Plain Words for UI Copy, Errors and Help Text",
+      "seo_description": "Write and review customer-facing UI copy, help text, error messages, onboarding and product docs in plain language. Use it whenever product language is added or changed.",
+      "keywords": [
+        "UI copy",
+        "microcopy",
+        "error messages",
+        "help text",
+        "onboarding",
+        "plain language",
+        "product docs"
+      ],
+      "difficulty": "beginner",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "decision-page-to-ticket": {
+      "tier": "process",
+      "icon": "clipboard-list",
+      "title": "Decision Page to Ticket",
+      "seo_title": "Decision Page to Ticket: Agree on One Page, Then Build From the Ticket",
+      "seo_description": "Turn a scoping question into one shared decision page that engineers and non-engineers can judge, often as mockups. Then write a ticket an engineer can build from without asking.",
+      "keywords": [
+        "product decisions",
+        "scoping",
+        "tickets",
+        "mockups",
+        "requirements",
+        "stakeholder alignment"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "deploy-source-guard": {
+      "tier": "process",
+      "icon": "git-commit",
+      "title": "Deploy Source Guard",
+      "seo_title": "Deploy Source Guard: Pin Checkout Deploys to One Commit and Prove It",
+      "seo_description": "A deploy that builds from a live working checkout can ship code that matches no commit. Pin the deploy to one commit, then prove the running build is that commit.",
+      "keywords": [
+        "deployment",
+        "deploy script",
+        "git",
+        "Vercel",
+        "release",
+        "build provenance"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "durable-seed-floor": {
+      "tier": "process",
+      "icon": "database",
+      "title": "Durable Seed Floor",
+      "seo_title": "Durable Seed Floor: A Self-Healing Data Floor for Read-Only E2E Gates",
+      "seo_description": "Read-only E2E tests that assert over shared data fail when a cleanup sweep removes it. Upsert the data they need in global setup, in a namespace the cleanup cannot match.",
+      "keywords": [
+        "E2E testing",
+        "Playwright",
+        "test data",
+        "seed data",
+        "global setup",
+        "flaky tests",
+        "test cleanup"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "gauntlet-loop": {
+      "tier": "process",
+      "icon": "repeat",
+      "title": "Gauntlet Loop",
+      "seo_title": "Gauntlet Loop: Run Big Agent Tasks as a Bounded Build and Judge Cycle",
+      "seo_description": "Write one prompt that runs an ambitious goal as a bounded build, inspect, judge and repeat cycle. The metric is one the agent cannot fudge, and the builder never grades its own work.",
+      "keywords": [
+        "AI agents",
+        "autonomous agents",
+        "agent loop",
+        "prompt engineering",
+        "subagents",
+        "evaluation metric",
+        "Claude Code"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "header-yields-to-task-surface": {
+      "tier": "react",
+      "icon": "panel-top",
+      "title": "Header Yields to the Task Surface",
+      "seo_title": "Header Yields to the Task Surface: Keep Hide-on-Scroll Headers Off the Form",
+      "seo_description": "A hide-on-scroll header must stay hidden while the page's main task, such as a scheduler, checkout or form, sits under it. Measure where it would rest, then test that it stays hidden.",
+      "keywords": [
+        "sticky header",
+        "hide on scroll",
+        "scroll handler",
+        "React",
+        "Playwright",
+        "layout",
+        "iframe embed"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "portable-component-bundle": {
+      "tier": "react",
+      "icon": "package",
+      "title": "Portable Component Bundle",
+      "seo_title": "Portable Component Bundle: Ship a React Library Outside Its App Build",
+      "seo_description": "Ship React components to a docs site, embed or CMS preview as classic scripts plus one stylesheet, without a second copy of React or unstyled Tailwind classes.",
+      "keywords": [
+        "React",
+        "component library",
+        "IIFE",
+        "UMD",
+        "bundling",
+        "Tailwind",
+        "React 19",
+        "Invalid hook call"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "provider-neutral-sync-policy": {
+      "tier": "backend",
+      "icon": "refresh-cw",
+      "title": "Provider-Neutral Sync Policy",
+      "seo_title": "Provider-Neutral Sync Policy: Decide Reuse Once, Prove the Merge First",
+      "seo_description": "Put the rule that decides whether an integration reuses, creates or leaves an external record in one pure module that every provider adapter calls. Prove two providers' rules match before merging them.",
+      "keywords": [
+        "integrations",
+        "CRM sync",
+        "duplicate records",
+        "adapter pattern",
+        "payment providers",
+        "sync policy"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "record-the-no-op": {
+      "tier": "backend",
+      "icon": "circle-slash",
+      "title": "Record the No-Op",
+      "seo_title": "Record the No-Op: A Deliberate Skip Needs a Durable Record",
+      "seo_description": "A skipped sync, an empty job run or an ignored webhook is an outcome. Record it on the entity it concerns, deduplicated per reason and time window, and prove the write works against the real store.",
+      "keywords": [
+        "audit log",
+        "observability",
+        "no-op",
+        "webhooks",
+        "background jobs",
+        "support",
+        "history"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "retry-vs-reporting-classifier": {
+      "tier": "backend",
+      "icon": "split",
+      "title": "Retry Classifier vs Reporting Classifier",
+      "seo_title": "Retry vs Reporting Classifier: Keep 'Retry?' and 'Whose Fault?' Apart",
+      "seo_description": "Keep the retry classifier narrow. Add a separate reporting-only classifier that files unreachable dependencies, such as a full database pool, as one degradation group in your error tracker.",
+      "keywords": [
+        "error handling",
+        "retries",
+        "error tracking",
+        "Sentry",
+        "connection pool",
+        "outages",
+        "transient errors"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "satellite-domain-sign-in": {
+      "tier": "backend",
+      "icon": "globe",
+      "title": "Satellite Domain Sign-In",
+      "seo_title": "Satellite Domain Sign-In: One App, Two Domain Families, One Sign-In",
+      "seo_description": "Serve one app on two domain families with one sign-in. Configure the satellite domain in your auth provider, and give every hand-off from the second domain its own way back.",
+      "keywords": [
+        "authentication",
+        "Clerk satellites",
+        "custom domains",
+        "multi-domain",
+        "middleware",
+        "redirects",
+        "SSO"
+      ],
+      "difficulty": "advanced",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "session-token-claim-budget": {
+      "tier": "backend",
+      "icon": "cookie",
+      "title": "Session Token Claim Budget",
+      "seo_title": "Session Token Claim Budget: Every Claim Spends Cookie Space",
+      "seo_description": "A session token stored in a cookie has a size budget, and every custom claim spends it. Give each claim a named reader and a size bound before you edit a production token template.",
+      "keywords": [
+        "JWT",
+        "session token",
+        "cookies",
+        "Clerk",
+        "Auth0",
+        "NextAuth",
+        "custom claims"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    },
+    "type-the-parse-input": {
+      "tier": "backend",
+      "icon": "braces",
+      "title": "Type the Parse Input",
+      "seo_title": "Type the Parse Input: Typecheck What Your Code Hands to Zod",
+      "seo_description": "A runtime validator takes unknown, so the object your typed code hands to schema.parse() is never typechecked. Type the hand-off as z.input<typeof schema> to catch drift at build time.",
+      "keywords": [
+        "TypeScript",
+        "Zod",
+        "validation",
+        "type safety",
+        "schema",
+        "runtime errors"
+      ],
+      "difficulty": "intermediate",
+      "related_chapters": [
+
+      ],
+      "related_tools": [
+
+      ]
+    }
+  }
+}

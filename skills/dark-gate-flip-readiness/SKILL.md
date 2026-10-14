@@ -1,12 +1,6 @@
 ---
 name: dark-gate-flip-readiness
-description: >
-  Safely replace a hot computed/derived read with a cheaper persisted-or-SQL
-  projection by shipping it DARK behind a flag, pinned by an automated
-  source-of-truth parity check + a drift invariant + a bounded backfill, then
-  flipping on a canary. Activates when optimizing a slow read path by moving
-  derivation (status, scoring, rollups) into SQL or a persisted column, or any
-  "make the hot read cheaper without changing results" rewrite.
+description: Safely replace a hot computed/derived read with a cheaper persisted-or-SQL projection by shipping it DARK behind a flag, pinned by an automated source-of-truth parity check + a drift invariant + a bounded backfill, then flipping on a canary. Activates when optimizing a slow read path by moving derivation (status, scoring, rollups) into SQL or a persisted column, or any "make the hot read cheaper without changing results" rewrite.
 ---
 
 # Dark-Gate Flip-Readiness

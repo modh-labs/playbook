@@ -1,23 +1,8 @@
 ---
 name: metric-definition-trap
-description: >
-  Before any metric reaches a report, dashboard, exec deck, or stakeholder, name its
-  population and definition, then adversarially re-query the number against live data.
-  Use when reporting revenue/MRR/conversions/churn/ROAS/signups, building a KPI surface,
-  auditing analytics, or repeating a "we can source this metric" claim. Catches two
-  traps: one label hiding two incompatible populations (e.g. our SaaS revenue vs our
-  customers' deal revenue), and an un-verified number that is silently 8x off because
-  it includes gating/skipped rows or used the wrong constant.
-tier: universal
-icon: ruler
-title: "The Metric Definition Trap"
-seo_title: "The Metric Definition Trap — Name the Population, Verify the Number"
-seo_description: "Every reported metric must name its population and definition, and the number must be adversarially verified against live data before it ships. Catches one-label-two-populations and gross-vs-net count inflation."
-keywords: ["metric definition", "kpi integrity", "revenue reporting", "data verification", "vanity metrics", "gmv vs revenue", "denominator", "analytics audit"]
-difficulty: intermediate
-related_chapters:
-  - "06-process/project-charter"
-related_tools: []
+description: 'Before any metric reaches a report, dashboard, exec deck, or stakeholder, name its population and definition, then adversarially re-query the number against live data. Use when reporting revenue/MRR/conversions/churn/ROAS/signups, building a KPI surface, auditing analytics, or repeating a "we can source this metric" claim. Catches two traps: one label hiding two incompatible populations (e.g. our SaaS revenue vs our customers'' deal revenue), and an un-verified number that is silently 8x off because it includes gating/skipped rows or used the wrong constant.
+
+'
 ---
 
 # The Metric Definition Trap

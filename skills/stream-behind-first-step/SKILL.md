@@ -1,14 +1,6 @@
 ---
 name: stream-behind-first-step
-description: >
-  Don't suspend a whole multi-step component on data only a later step needs.
-  When a wizard / booking form / checkout consumes a slow server-prefetched
-  promise via React `use()` at the top of the component, the entire tree
-  suspends — blocking the first interactive step behind data it doesn't use
-  yet. Use when a server-passed promise is consumed with top-level `use()`,
-  when the first step shows a full-screen skeleton while a slow upstream
-  (availability, search, recommendations) resolves, or when a "loading" bug
-  and an unrelated-looking post-load "snap"/re-render appear together.
+description: Don't suspend a whole multi-step component on data only a later step needs. When a wizard / booking form / checkout consumes a slow server-prefetched promise via React `use()` at the top of the component, the entire tree suspends — blocking the first interactive step behind data it doesn't use yet. Use when a server-passed promise is consumed with top-level `use()`, when the first step shows a full-screen skeleton while a slow upstream (availability, search, recommendations) resolves, or when a "loading" bug and an unrelated-looking post-load "snap"/re-render appear together.
 ---
 
 # Stream Behind the First Step

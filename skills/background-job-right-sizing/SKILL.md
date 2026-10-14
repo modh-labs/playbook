@@ -1,15 +1,6 @@
 ---
 name: background-job-right-sizing
-description: >
-  Choose the LIGHTEST durable mechanism a background/async/side-effect job
-  actually needs, instead of reaching for a full workflow engine by reflex.
-  A four-rung ladder — in-process fire-and-forget → durable queue → workflow
-  engine → dedicated orchestrator — routed by four axes: durability, step
-  count, concurrency shape, and cross-app/bus membership. Activates when
-  adding any background job, emitting a side-effect from a request handler,
-  choosing between Vercel Queues / Workflows / Inngest / Temporal / SQS, or
-  auditing an existing job fleet for over-engineering ("do we still need the
-  orchestrator for this?").
+description: 'Choose the LIGHTEST durable mechanism a background/async/side-effect job actually needs, instead of reaching for a full workflow engine by reflex. A four-rung ladder — in-process fire-and-forget → durable queue → workflow engine → dedicated orchestrator — routed by four axes: durability, step count, concurrency shape, and cross-app/bus membership. Activates when adding any background job, emitting a side-effect from a request handler, choosing between Vercel Queues / Workflows / Inngest / Temporal / SQS, or auditing an existing job fleet for over-engineering ("do we still need the orchestrator for this?").'
 ---
 
 # Background-Job Right-Sizing

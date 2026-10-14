@@ -1,10 +1,6 @@
 ---
 name: nextjs-server-client-boundary
-description: >
-  Enforce the server/client module boundary in Next.js App Router projects.
-  Use when creating client components, providers, hooks, or debugging
-  "node: protocol" errors in Storybook/webpack/test environments.
-  Prevents client components from importing server-side modules.
+description: 'Enforce the server/client module boundary in Next.js App Router projects. Use when creating client components, providers, hooks, or debugging "node: protocol" errors in Storybook/webpack/test environments. Prevents client components from importing server-side modules.'
 ---
 
 # Next.js Server/Client Boundary

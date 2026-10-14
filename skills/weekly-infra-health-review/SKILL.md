@@ -1,26 +1,8 @@
 ---
 name: weekly-infra-health-review
-description: >
-  Stand up a recurring agent that READS your infra telemetry, DIFFS it against
-  last week, and posts a short week-over-week digest ending in 1-3 prioritized
-  "areas of improvement". A dashboard shows numbers but never says what CHANGED
-  or what to DO — an interpreted weekly digest (signals -> recommended actions)
-  is the difference between "we collect telemetry" and "we understand our
-  system". Use when telemetry exists but nobody reads it, when "is our infra
-  healthy?" has no one-glance answer, when costs/perf drift unnoticed until they
-  break, or when standing up a scheduled health/cost review for any stack
-  (Postgres advisors, connection capacity, telemetry quotas, deploy/config
-  drift, web vitals, tracked-ticket movement).
-tier: process
-icon: heart-pulse
-title: "Weekly Infra Health Review"
-seo_title: "Weekly Infra Health Review — Interpret Telemetry, Don't Just Collect It"
-seo_description: "A dashboard shows numbers; it never says what changed or what to do. Run a recurring agent that diffs your infra signals week-over-week and posts a short digest ending in 1-3 prioritized actions."
-keywords: ["infra health", "weekly digest", "week-over-week", "telemetry interpretation", "config drift", "connection capacity", "telemetry quota", "web vitals", "runbook", "scheduled agent", "areas of improvement"]
-difficulty: intermediate
-related_chapters:
-  - "05-observability/error-tracking"
-related_tools: []
+description: 'Stand up a recurring agent that READS your infra telemetry, DIFFS it against last week, and posts a short week-over-week digest ending in 1-3 prioritized "areas of improvement". A dashboard shows numbers but never says what CHANGED or what to DO — an interpreted weekly digest (signals -> recommended actions) is the difference between "we collect telemetry" and "we understand our system". Use when telemetry exists but nobody reads it, when "is our infra healthy?" has no one-glance answer, when costs/perf drift unnoticed until they break, or when standing up a scheduled health/cost review for any stack (Postgres advisors, connection capacity, telemetry quotas, deploy/config drift, web vitals, tracked-ticket movement).
+
+'
 ---
 
 # Weekly Infra Health Review

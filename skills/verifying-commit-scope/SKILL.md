@@ -1,7 +1,6 @@
 ---
 name: verifying-commit-scope
-description: >
- Pre-commit auto-formatters can sweep concurrent agents' unstaged work into your commit when stash/restore mishandles a mixed working tree. Run `git diff --cached --stat` before every commit, treat any unexpected file count as stop-the-world, and recover with `git reset --soft HEAD~1`. Triggers when running `git commit` in any repo with husky/lefthook + lint-staged + auto-format `--write`, especially with concurrent unstaged work in the tree.
+description: Pre-commit auto-formatters can sweep concurrent agents' unstaged work into your commit when stash/restore mishandles a mixed working tree. Run `git diff --cached --stat` before every commit, treat any unexpected file count as stop-the-world, and recover with `git reset --soft HEAD~1`. Triggers when running `git commit` in any repo with husky/lefthook + lint-staged + auto-format `--write`, especially with concurrent unstaged work in the tree.
 ---
 
 # Verifying Commit Scope

@@ -1,7 +1,6 @@
 ---
 name: repository-test-backfill
-description: >
-  Two-tier strategy for retroactively writing unit tests for a Drizzle-based repository module that has zero or sparse coverage. Tier 1 = empty-org early-return test for every public function (cheap, locks the signed-out contract). Tier 2 = deep happy-path tests for the most-used functions only. Use after a monster-file decomposition surfaces 0%-coverage submodules, or when adding tests to any uncovered repository file.
+description: Two-tier strategy for retroactively writing unit tests for a Drizzle-based repository module that has zero or sparse coverage. Tier 1 = empty-org early-return test for every public function (cheap, locks the signed-out contract). Tier 2 = deep happy-path tests for the most-used functions only. Use after a monster-file decomposition surfaces 0%-coverage submodules, or when adding tests to any uncovered repository file.
 ---
 
 # Repository Test Backfill (Two-Tier Strategy)

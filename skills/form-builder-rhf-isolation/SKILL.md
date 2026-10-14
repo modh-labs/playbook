@@ -1,12 +1,6 @@
 ---
 name: form-builder-rhf-isolation
-description: >
-  Use when building a dynamic form-builder (admin-facing field editor,
-  question builder, dynamic row list) in Next.js + React Hook Form + shadcn.
-  Prevents the cascade-rerender trap where typing in one row rerenders all
-  rows, and the focus-loss trap where regenerating a programmatic key on
-  keystroke remounts the input. Triggers on: `useFieldArray`, `useWatch`,
-  dynamic field lists, question builders, form builders, row editors.
+description: 'Use when building a dynamic form-builder (admin-facing field editor, question builder, dynamic row list) in Next.js + React Hook Form + shadcn. Prevents the cascade-rerender trap where typing in one row rerenders all rows, and the focus-loss trap where regenerating a programmatic key on keystroke remounts the input. Triggers on: `useFieldArray`, `useWatch`, dynamic field lists, question builders, form builders, row editors.'
 ---
 
 # Form-Builder RHF Isolation

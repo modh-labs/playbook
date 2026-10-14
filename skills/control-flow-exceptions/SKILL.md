@@ -1,12 +1,6 @@
 ---
 name: control-flow-exceptions
-description: >
-  Some "errors" are control flow, not failures. `redirect()` and `notFound()`
-  in Next.js work by THROWING — a naive `try/catch` swallows the signal, cancels
-  the navigation, and renders the internal digest string ("NEXT_REDIRECT;...")
-  to the user. Any `catch` block wrapping code that might redirect MUST call
-  `unstable_rethrow(error)` as its first line. Triggers on `try/catch` around a
-  server action, Server Component, or route handler in Next.js App Router.
+description: Some "errors" are control flow, not failures. `redirect()` and `notFound()` in Next.js work by THROWING — a naive `try/catch` swallows the signal, cancels the navigation, and renders the internal digest string ("NEXT_REDIRECT;...") to the user. Any `catch` block wrapping code that might redirect MUST call `unstable_rethrow(error)` as its first line. Triggers on `try/catch` around a server action, Server Component, or route handler in Next.js App Router.
 ---
 
 # Control-Flow Exceptions

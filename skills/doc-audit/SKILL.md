@@ -1,19 +1,8 @@
 ---
 name: doc-audit
-description: >
-  Audit and maintain documentation coverage across any codebase using the three-layer
-  system (README.md for humans, AGENTS.md for AI agents, CLAUDE.md as pointer).
-  Finds gaps, stale references, and JSDoc coverage issues. Can generate missing docs.
-  Use when adding features, before shipping, or periodically to maintain coverage.
-tier: process
-icon: file-text
-title: "Documentation Audit"
-seo_title: "Documentation Audit — Modh Engineering Skill"
-seo_description: "Audit and maintain documentation coverage across any codebase using the three-layer system. Finds gaps, stale references, and JSDoc coverage issues."
-keywords: ["documentation", "audit", "AGENTS.md", "JSDoc", "coverage"]
-difficulty: beginner
-related_chapters: []
-related_tools: []
+description: 'Audit and maintain documentation coverage across any codebase using the three-layer system (README.md for humans, AGENTS.md for AI agents, CLAUDE.md as pointer). Finds gaps, stale references, and JSDoc coverage issues. Can generate missing docs. Use when adding features, before shipping, or periodically to maintain coverage.
+
+'
 ---
 
 # Documentation Audit Skill

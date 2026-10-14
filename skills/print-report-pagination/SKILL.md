@@ -1,22 +1,8 @@
 ---
 name: print-report-pagination
-description: >
-  Paginate multi-page PDFs generated from HTML or markdown (Puppeteer,
-  Playwright, wkhtmltopdf, weasyprint, react-pdf print CSS) by what you FORBID
-  from breaking, not where you force breaks. Let long unboxed prose flow across
-  pages; never split a boxed element, orphan a heading, or cut a single bullet.
-  Use when building any report/invoice/statement/export PDF, when a generated
-  PDF has half-cards or stranded headings at page edges, or when reviewing
-  print/paged-media CSS.
-tier: frontend
-icon: file-text
-title: "Print Report Pagination"
-seo_title: "Print Report Pagination — Forbid-Don't-Force Paged Media CSS"
-seo_description: "Paginate HTML/markdown-to-PDF reports by forbidding bad breaks (break-inside on cards, break-after on headings) instead of forcing page breaks. Stress-test with a deliberately long render."
-keywords: ["print css", "paged media", "pdf generation", "break-inside avoid", "puppeteer pdf", "page break", "report pagination"]
-difficulty: intermediate
-related_chapters: []
-related_tools: []
+description: 'Paginate multi-page PDFs generated from HTML or markdown (Puppeteer, Playwright, wkhtmltopdf, weasyprint, react-pdf print CSS) by what you FORBID from breaking, not where you force breaks. Let long unboxed prose flow across pages; never split a boxed element, orphan a heading, or cut a single bullet. Use when building any report/invoice/statement/export PDF, when a generated PDF has half-cards or stranded headings at page edges, or when reviewing print/paged-media CSS.
+
+'
 ---
 
 # Print Report Pagination

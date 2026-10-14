@@ -1,11 +1,6 @@
 ---
 name: navigate-before-dismiss
-description: >
-  When a single click handler both calls `router.push(...)` and closes a Radix
-  dismissable (Dialog, Sheet, Popover, CommandDialog, DropdownMenu), navigate
-  FIRST and defer the dismiss to a microtask. Triggers on any Next.js App Router
-  + Radix UI codebase, especially command palettes and "click result to navigate"
-  flows. Activates on `setOpen(false)` + `router.push` in the same handler.
+description: When a single click handler both calls `router.push(...)` and closes a Radix dismissable (Dialog, Sheet, Popover, CommandDialog, DropdownMenu), navigate FIRST and defer the dismiss to a microtask. Triggers on any Next.js App Router + Radix UI codebase, especially command palettes and "click result to navigate" flows. Activates on `setOpen(false)` + `router.push` in the same handler.
 ---
 
 # Navigate Before Dismiss

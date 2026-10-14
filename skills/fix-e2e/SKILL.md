@@ -1,22 +1,8 @@
 ---
 name: fix-e2e
-description: >
-  Intelligent fix-loop for Playwright e2e suites with failing or skipped tests.
-  Triages every failure through a 4-rung evidence ladder (locator drift → test
-  bug → product bug → infra), fixes at the right layer, and exits only after
-  two consecutive clean runs. Refuses the "obvious" flake-hiders — bumping
-  retries, adding waitForTimeout, or silencing tests behind test.skip — because
-  those create long-term flake debt. Use when an e2e run is red, after UI
-  changes that break many specs, or before a release gate.
-tier: quality
-icon: loop
-title: "The E2E Fix-Loop"
-seo_title: "The E2E Fix-Loop — Triage Playwright Failures by Evidence, Not by Retries"
-seo_description: "Most teams fix flaky Playwright tests by bumping retries and adding waitForTimeout. That hides bugs; it doesn't fix them. Here's the four-rung triage ladder that distinguishes locator drift from product bugs from infra outages — and the exit criteria that prove the suite is actually green."
-keywords: ["playwright", "e2e", "flaky tests", "test triage", "fix loop", "ci quality", "test skips"]
-difficulty: intermediate
-related_chapters: []
-related_tools: []
+description: 'Intelligent fix-loop for Playwright e2e suites with failing or skipped tests. Triages every failure through a 4-rung evidence ladder (locator drift → test bug → product bug → infra), fixes at the right layer, and exits only after two consecutive clean runs. Refuses the "obvious" flake-hiders — bumping retries, adding waitForTimeout, or silencing tests behind test.skip — because those create long-term flake debt. Use when an e2e run is red, after UI changes that break many specs, or before a release gate.
+
+'
 ---
 
 # The E2E Fix-Loop

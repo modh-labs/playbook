@@ -1,19 +1,8 @@
 ---
 name: testing
-description: >
-  Create tests following Vitest and Playwright patterns. Use when writing
-  unit tests, integration tests, mocking Supabase, testing server actions,
-  or running test suites. Enforces __tests__ directories, repository mocking,
-  and test data cleanup.
-tier: backend
-icon: test-tube
-title: "Testing Strategy"
-seo_title: "Testing Strategy — Modh Engineering Skill"
-seo_description: "Create tests following Vitest and Playwright patterns. Enforces __tests__ directories, repository mocking, and test data cleanup."
-keywords: ["testing", "vitest", "playwright", "unit tests", "mocking"]
-difficulty: intermediate
-related_chapters: []
-related_tools: []
+description: 'Create tests following Vitest and Playwright patterns. Use when writing unit tests, integration tests, mocking Supabase, testing server actions, or running test suites. Enforces __tests__ directories, repository mocking, and test data cleanup.
+
+'
 ---
 
 # Testing Patterns Skill

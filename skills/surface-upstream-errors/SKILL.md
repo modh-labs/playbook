@@ -1,16 +1,6 @@
 ---
 name: surface-upstream-errors
-description: >
-  A third-party SDK throws a rich, structured error (HTTP status, machine code,
-  human-readable long message, trace id, per-item failures) and your catch block
-  flattens it into "Something went wrong. Please try again." Now the user can't
-  act on it and your logs can't be queried by cause — you've thrown away the
-  diagnosis at the exact moment it mattered. Parse the structured error, surface
-  the real reason in the UI, and tag observability by the upstream code. Corollary:
-  when the upstream call is an ATOMIC bulk endpoint, pre-filter known conflicts so
-  one bad item can't fail the whole batch. Triggers on any catch block around a
-  call to an external API/SDK (Stripe, Clerk, Nylas, payment/auth/calendar/email
-  providers), and on any use of a provider's bulk/batch endpoint.
+description: 'A third-party SDK throws a rich, structured error (HTTP status, machine code, human-readable long message, trace id, per-item failures) and your catch block flattens it into "Something went wrong. Please try again." Now the user can''t act on it and your logs can''t be queried by cause — you''ve thrown away the diagnosis at the exact moment it mattered. Parse the structured error, surface the real reason in the UI, and tag observability by the upstream code. Corollary: when the upstream call is an ATOMIC bulk endpoint, pre-filter known conflicts so one bad item can''t fail the whole batch. Triggers on any catch block around a call to an external API/SDK (Stripe, Clerk, Nylas, payment/auth/calendar/email providers), and on any use of a provider''s bulk/batch endpoint.'
 ---
 
 # Surface Upstream Errors

@@ -1,7 +1,6 @@
 ---
 name: monster-file-decomposition
-description: >
-  When decomposing a monster file (>1000 LOC) into focused submodules in a closed-source monorepo, extract one submodule per commit AND migrate all consumer imports to the new source-of-truth path in the SAME commit. Never use re-export shims to bridge consumers. Activates on any file >1000 LOC with 2+ external consumers in a monorepo.
+description: When decomposing a monster file (>1000 LOC) into focused submodules in a closed-source monorepo, extract one submodule per commit AND migrate all consumer imports to the new source-of-truth path in the SAME commit. Never use re-export shims to bridge consumers. Activates on any file >1000 LOC with 2+ external consumers in a monorepo.
 ---
 
 # Monster File Decomposition (No-Shim Rule)

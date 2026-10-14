@@ -1,23 +1,8 @@
 ---
 name: pii-redaction-parity
-description: >
-  Use when an app sends errors/logs/traces to more than one sink (Sentry events,
-  spans, and logs; a structured logger like pino/winston; an APM). Enforce ONE
-  sensitive-key list across EVERY egress path, and watch structured-logger
-  key-path shapes — a flat dotted key like record["user.email"] is NOT redacted
-  by the path "user.email" in pino (it reads that as nested user→email). Triggers
-  on: adding a log/trace sink, declaring a PII posture ("id + org only"), writing
-  a redact/scrub/beforeSend config, or a "PII showed up in logs even though
-  Sentry scrubbed it" report.
-tier: backend
-icon: shield-alert
-title: "PII Redaction Egress Parity"
-seo_title: "PII Redaction Egress Parity — Modh Engineering Skill"
-seo_description: "Enforce one PII-redaction list across every egress path (Sentry events/spans/logs, structured logger), and the counterintuitive pino flat-dotted key-path trap."
-keywords: ["PII", "redaction", "pino", "Sentry", "OpenTelemetry", "logging", "observability", "GDPR"]
-difficulty: intermediate
-related_chapters: []
-related_tools: []
+description: 'Use when an app sends errors/logs/traces to more than one sink (Sentry events, spans, and logs; a structured logger like pino/winston; an APM). Enforce ONE sensitive-key list across EVERY egress path, and watch structured-logger key-path shapes — a flat dotted key like record["user.email"] is NOT redacted by the path "user.email" in pino (it reads that as nested user→email). Triggers on: adding a log/trace sink, declaring a PII posture ("id + org only"), writing a redact/scrub/beforeSend config, or a "PII showed up in logs even though Sentry scrubbed it" report.
+
+'
 ---
 
 # PII Redaction Egress Parity

@@ -1,21 +1,8 @@
 ---
 name: code-review
-description: >
-  Run educational code reviews against your project's quality standards.
-  Use when reviewing PRs, checking current branch before pushing, or doing
-  batch quality sweeps across all open PRs. Applies observability, testing,
-  SOLID, type safety, security, business logic, and clean code checks with
-  pass/fail verdicts. Produces actionable findings with real-world impact
-  explanations, not just "best practice" citations.
-tier: universal
-icon: search-check
-title: "Code Review"
-seo_title: "Code Review — Modh Engineering Skill"
-seo_description: "Educational code review skill for AI agents. Seven review dimensions, pass/fail verdicts, and actionable findings with real-world impact explanations."
-keywords: ["code review", "pull request review", "quality audit", "SOLID", "observability", "security", "type safety"]
-difficulty: intermediate
-related_chapters: ["code-quality-audit", "testing-strategy", "typescript-strict"]
-related_tools: ["code-quality-audit", "pull-request", "testing", "security-and-compliance", "observability"]
+description: 'Run educational code reviews against your project''s quality standards. Use when reviewing PRs, checking current branch before pushing, or doing batch quality sweeps across all open PRs. Applies observability, testing, SOLID, type safety, security, business logic, and clean code checks with pass/fail verdicts. Produces actionable findings with real-world impact explanations, not just "best practice" citations.
+
+'
 ---
 
 # Code Review

@@ -1,7 +1,6 @@
 ---
 name: bug-cleanup-triage
-description: >
-  Framework for backlog bug cleanup sessions. Triage is three sequential activities — Linear hygiene, root-cause investigation, and code fixing — that must be executed in order as a hard phase gate. Includes git log pre-flight, Sentry module-tag verification, and umbrella breakdown auto-detection. Use when planning to clean up N bugs from a backlog, before dispatching research agents, or when a ticket has been In Progress for weeks without shipping.
+description: Framework for backlog bug cleanup sessions. Triage is three sequential activities — Linear hygiene, root-cause investigation, and code fixing — that must be executed in order as a hard phase gate. Includes git log pre-flight, Sentry module-tag verification, and umbrella breakdown auto-detection. Use when planning to clean up N bugs from a backlog, before dispatching research agents, or when a ticket has been In Progress for weeks without shipping.
 ---
 
 # Bug Cleanup Triage

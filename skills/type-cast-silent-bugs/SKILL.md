@@ -1,12 +1,6 @@
 ---
 name: type-cast-silent-bugs
-description: >
-  Type-assertion casts between a database query and consumer code (`as any`,
-  `as unknown as { ... }`, `useState<any[]>`) are silent-bug indicators —
-  they hide column/table drift from the type system. Activates during any
-  type-tightening migration (Drizzle migration, schema rename, ORM swap),
-  any audit that grep-counts these casts, or any "this dashboard's been
-  broken forever, why hasn't it alerted?" investigation.
+description: Type-assertion casts between a database query and consumer code (`as any`, `as unknown as { ... }`, `useState<any[]>`) are silent-bug indicators — they hide column/table drift from the type system. Activates during any type-tightening migration (Drizzle migration, schema rename, ORM swap), any audit that grep-counts these casts, or any "this dashboard's been broken forever, why hasn't it alerted?" investigation.
 ---
 
 # Type-Cast Silent Bugs

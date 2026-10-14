@@ -1,7 +1,6 @@
 ---
 name: debug-hmr-stale-bundle
-description: >
-  Diagnose and fix "module factory is not available. It might have been deleted in an HMR update" errors in Next.js + Turbopack dev. Use when you see module-evaluation errors pointing at innocent import lines, empty-object error boundary logs, or inexplicable route behavior that differs between browsers or subdomains. Activates when the root cause is a stale bundle in **browser storage**, not a code bug.
+description: Diagnose and fix "module factory is not available. It might have been deleted in an HMR update" errors in Next.js + Turbopack dev. Use when you see module-evaluation errors pointing at innocent import lines, empty-object error boundary logs, or inexplicable route behavior that differs between browsers or subdomains. Activates when the root cause is a stale bundle in **browser storage**, not a code bug.
 ---
 
 # Debug HMR Stale Bundle

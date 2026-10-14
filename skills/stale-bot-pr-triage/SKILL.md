@@ -1,21 +1,8 @@
 ---
 name: stale-bot-pr-triage
-description: >
-  Triage auto-generated fix PRs (Sentry Seer, Dependabot, Renovate, Cursor) by diffing
-  their intent against CURRENT main BEFORE actioning them. Use when a bot opens a fix PR,
-  when sweeping a backlog of bot PRs, or before cherry-picking/merging any machine-authored
-  branch. Bot PRs are stale snapshots — often already fixed on main, fixed better, or
-  actively regressive. Default to "survey first," not "apply."
-tier: process
-icon: git-pull-request
-title: "Stale Bot-PR Triage"
-seo_title: "Stale Bot-PR Triage — Stop Merging AI Fix PRs That Regress Your Code"
-seo_description: "Sentry Seer, Dependabot, and Cursor open fix PRs against a stale snapshot. Before you merge, diff intent against current main — they're often already fixed, or they silently undo a guard you added on purpose."
-keywords: ["sentry seer", "dependabot", "bot pr", "auto-fix pr", "stale branch", "ai code review", "pr triage"]
-difficulty: intermediate
-related_chapters:
-  - "06-process/code-review"
-related_tools: []
+description: 'Triage auto-generated fix PRs (Sentry Seer, Dependabot, Renovate, Cursor) by diffing their intent against CURRENT main BEFORE actioning them. Use when a bot opens a fix PR, when sweeping a backlog of bot PRs, or before cherry-picking/merging any machine-authored branch. Bot PRs are stale snapshots — often already fixed on main, fixed better, or actively regressive. Default to "survey first," not "apply."
+
+'
 ---
 
 # Stale Bot-PR Triage

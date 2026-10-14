@@ -1,21 +1,8 @@
 ---
 name: headless-form-engine
-description: >
-  A form/wizard that needs (or will soon need) more than one presentation —
-  all-at-once vs. one-question-per-screen, a modal vs. a full page, a mobile
-  flow vs. desktop — should have exactly ONE headless controller owning state,
-  validation, and submit, exposed through an explicit typed interface, with
-  every presentation a pure consumer. Use when you're about to fork a form's
-  validation/submit logic to support a second layout, when a designer asks for
-  a "Typeform-style" version of an existing form, or when you're reviewing a
-  form component and find business logic duplicated across two render paths.
-type: rigid
-tier: frontend
-icon: layers
-title: "Headless Form Engine"
-seo_title: "Headless Form Engine — One Controller, N Presentations, Proven Identical"
-seo_description: "When a form needs a second presentation (stepped, modal, mobile), don't fork the logic — extract one headless controller with an explicit typed interface and prove parity with a payload-equality test."
-keywords: ["headless component", "form architecture", "multi-step form", "wizard pattern", "OCP", "React hooks", "parity testing"]
+description: 'A form/wizard that needs (or will soon need) more than one presentation — all-at-once vs. one-question-per-screen, a modal vs. a full page, a mobile flow vs. desktop — should have exactly ONE headless controller owning state, validation, and submit, exposed through an explicit typed interface, with every presentation a pure consumer. Use when you''re about to fork a form''s validation/submit logic to support a second layout, when a designer asks for a "Typeform-style" version of an existing form, or when you''re reviewing a form component and find business logic duplicated across two render paths.
+
+'
 ---
 
 # Headless Form Engine

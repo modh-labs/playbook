@@ -1,11 +1,6 @@
 ---
 name: provision-live-to-learn-contract
-description: >
-  When an external API's exact request schema is uncertain and a dry-run skips
-  the network, stop guessing from docs — make ONE real call and let the error
-  response teach you the precise contract, then fix and retry. Activates when
-  scripting create/update against an API (dashboards, webhooks, resources) whose
-  field/enum shape you're inferring, especially when a dry-run can't validate it.
+description: When an external API's exact request schema is uncertain and a dry-run skips the network, stop guessing from docs — make ONE real call and let the error response teach you the precise contract, then fix and retry. Activates when scripting create/update against an API (dashboards, webhooks, resources) whose field/enum shape you're inferring, especially when a dry-run can't validate it.
 ---
 
 # Provision Live to Learn the Contract

@@ -1,21 +1,8 @@
 ---
 name: webhook-temporal-guard
-description: >
-  Validate temporal relevance of webhook payloads at the handler boundary —
-  webhooks arrive carrying a moment that has already passed, and acting on
-  past-time payloads writes wrong-but-silent state into your DB and downstream
-  systems. Use when handling any webhook whose payload contains a time the
-  action depends on (start_time, expires_at, scheduled_at, deadline).
-type: rigid
-tier: backend
-icon: clock-alert
-title: "Webhook Temporal Guard"
-seo_title: "Webhook Temporal Guard — Why Past-Time Payloads Pollute Your DB"
-seo_description: "Webhooks announce state from a past moment. When the payload carries a time the action depends on, that time may have moved into the past during delivery — verify before mutating, or you'll write wrong-but-silent state into your DB and customer notifications."
-keywords: ["webhook past time", "webhook delivery delay", "calendar webhook stale", "stripe webhook stale", "event.updated past start_time", "webhook temporal validation", "stale webhook payload"]
-difficulty: intermediate
-related_chapters: []
-related_tools: []
+description: 'Validate temporal relevance of webhook payloads at the handler boundary — webhooks arrive carrying a moment that has already passed, and acting on past-time payloads writes wrong-but-silent state into your DB and downstream systems. Use when handling any webhook whose payload contains a time the action depends on (start_time, expires_at, scheduled_at, deadline).
+
+'
 ---
 
 # Webhook Temporal Guard

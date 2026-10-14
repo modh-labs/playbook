@@ -1,13 +1,6 @@
 ---
 name: observability-cost-quota
-description: >
-  Observability data (spans, traces, logs, profiles) is a METERED cost with a
-  silent failure mode: when the quota is exhausted the provider drops that
-  category while errors keep flowing, so a perf dashboard goes empty and nobody
-  notices. Activates when traces/spans "stopped", a perf dashboard is empty,
-  there's "no recent performance data", or you're about to raise a telemetry
-  bill. Teaches the diagnosis (errors-live + spans-dead = quota, not outage) and
-  the counterintuitive fix order: cut low-value emission BEFORE buying headroom.
+description: 'Observability data (spans, traces, logs, profiles) is a METERED cost with a silent failure mode: when the quota is exhausted the provider drops that category while errors keep flowing, so a perf dashboard goes empty and nobody notices. Activates when traces/spans "stopped", a perf dashboard is empty, there''s "no recent performance data", or you''re about to raise a telemetry bill. Teaches the diagnosis (errors-live + spans-dead = quota, not outage) and the counterintuitive fix order: cut low-value emission BEFORE buying headroom.'
 ---
 
 # Observability Cost & Quota

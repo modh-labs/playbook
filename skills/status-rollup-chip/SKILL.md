@@ -1,11 +1,6 @@
 ---
 name: status-rollup-chip
-description: >
-  When an admin table shows N raw state columns that the admin only cares about
-  as a rolled-up "is this entity ready?" question, collapse them into one
-  derived chip + popover nudge + row-click detail sheet. Use when a table is
-  overflowing horizontally, or when admins repeatedly scan 5+ columns just to
-  answer a single readiness question.
+description: When an admin table shows N raw state columns that the admin only cares about as a rolled-up "is this entity ready?" question, collapse them into one derived chip + popover nudge + row-click detail sheet. Use when a table is overflowing horizontally, or when admins repeatedly scan 5+ columns just to answer a single readiness question.
 ---
 
 # Status Rollup Chip

@@ -1,11 +1,6 @@
 ---
 name: progressive-disclosure-ctas
-description: >
-  Hide optional configuration fields behind subtle "+ Add X" CTAs that reveal
-  inline editors when clicked, with a LivePreview strip as the always-visible
-  narrator of current behavior. Use when a form has more optional fields than
-  mandatory ones, or when rarely-touched settings are cluttering a form the
-  admin visits often.
+description: Hide optional configuration fields behind subtle "+ Add X" CTAs that reveal inline editors when clicked, with a LivePreview strip as the always-visible narrator of current behavior. Use when a form has more optional fields than mandatory ones, or when rarely-touched settings are cluttering a form the admin visits often.
 ---
 
 # Progressive Disclosure CTAs
