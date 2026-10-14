@@ -372,7 +372,7 @@
     "dedup-key-completeness": {
       "type": "rigid",
       "tier": "backend",
-      "icon": "fingerprint",
+      "icon": "fingerprint-pattern",
       "title": "Dedup Key Completeness",
       "seo_title": "Dedup Key Completeness — Why Your Second Record Silently Disappears",
       "seo_description": "A dedup or idempotency guard must key on every dimension that makes two records distinct. Miss one and you silently merge legitimately-separate records — no error, just a lost row and an unfalsifiable support thread.",
@@ -578,7 +578,7 @@
     },
     "fix-e2e": {
       "tier": "process",
-      "icon": "loop",
+      "icon": "iteration-cw",
       "title": "The E2E Fix-Loop",
       "seo_title": "The E2E Fix-Loop — Triage Playwright Failures by Evidence, Not by Retries",
       "seo_description": "Most teams fix flaky Playwright tests by bumping retries and adding waitForTimeout. That hides bugs; it doesn't fix them. Here's the four-rung triage ladder that distinguishes locator drift from product bugs from infra outages — and the exit criteria that prove the suite is actually green.",
@@ -1249,7 +1249,7 @@
     },
     "prove-your-telemetry": {
       "tier": "universal",
-      "icon": "shield-question",
+      "icon": "shield-question-mark",
       "title": "Prove Your Telemetry",
       "seo_title": "Prove Your Telemetry: Why Broken Monitoring Looks Like Good News",
       "seo_description": "Instrumentation fails silently and its failure is indistinguishable from a healthy system. Five mechanisms that make telemetry lie, and the one question that catches all of them.",
@@ -1692,7 +1692,7 @@
       "type": "flexible",
       "tier": "process",
       "vendored": "mattpocock",
-      "icon": "help-circle",
+      "icon": "circle-question-mark",
       "title": "Wait What",
       "seo_title": "Wait What - Modh Engineering Skill",
       "seo_description": "Stop. That last message did not land. Re-pitch it.",
@@ -2009,7 +2009,7 @@
     },
     "deploy-source-guard": {
       "tier": "process",
-      "icon": "git-commit",
+      "icon": "git-commit-horizontal",
       "title": "Deploy Source Guard",
       "seo_title": "Deploy Source Guard: Pin Checkout Deploys to One Commit and Prove It",
       "seo_description": "A deploy that builds from a live working checkout can ship code that matches no commit. Pin the deploy to one commit, then prove the running build is that commit.",
