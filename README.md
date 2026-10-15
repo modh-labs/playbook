@@ -4,7 +4,7 @@
 
 This is the engineering playbook we use every day. It started as a collection of agent skills — reusable rules that teach AI coding assistants how we write code. But the patterns behind those skills are more valuable than the skills themselves. So we wrote them down.
 
-25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 82 AI agent skills that enforce these patterns automatically in your editor.
+25 chapters across 7 sections. Each chapter covers one pattern: the problem it solves, the principle behind it, the concrete implementation, and why it matters to the business. We also ship 83 AI agent skills that enforce these patterns automatically in your editor.
 
 ## Quick Start
 
@@ -193,6 +193,7 @@ How we build interfaces. Server Components by default. Client boundaries pushed 
 | [`route-colocation`](skills/route-colocation/) | Creating routes, organizing files | Colocate with routes, share at 3+ usages, actions folder pattern |
 | [`bug-cleanup-triage`](skills/bug-cleanup-triage/) | Planning a backlog cleanup session, before dispatching research agents, umbrella tickets stuck In Progress for weeks | Three-phase framework (hygiene → investigation → fixing) with git log pre-flight, Sentry module-tag verification, and umbrella breakdown auto-detection |
 | [`verifying-commit-scope`](skills/verifying-commit-scope/) | Any `git commit` in a repo with husky/lefthook + lint-staged + auto-format `--write`, especially with concurrent unstaged work in the tree | Catches pre-commit auto-formatters silently absorbing concurrent agents' unstaged work into your commit. Run `git diff --cached --stat` before commit, `git show --stat HEAD` after, and reset cleanly when the file count doesn't match |
+| [`agent-disk-budget`](skills/agent-disk-budget/) | A machine running coding agents is low on disk; writing a benchmark, build matrix, database restore or recurring automation; an instruction says "re-run from clean"; sizing a cleanup | Sorts agent output into evidence (keep) and scratch (delete when the task ends), adds a weekly age-based purge and a low-disk alert, and measures reclaimed space with `df` because `du` overcounts APFS clones and hard links |
 
 ---
 

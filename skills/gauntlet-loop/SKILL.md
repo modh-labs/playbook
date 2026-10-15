@@ -95,7 +95,8 @@ Always include an **integration pass**: one fresh agent that built nothing inspe
 
 - The builder never grades its own work. Cheapest rule here, catches the most.
 - The critic gets the artifact, never the summary.
-- A green subset is not evidence. Re-run the whole gate from clean each round.
+- A green subset is not evidence. Re-run the whole gate from a clean build in the same checkout each round.
+- Each round deletes its own scratch (builds, dependency installs, database restores) before the next round starts, and keeps the evidence. The `agent-disk-budget` skill owns the evidence and scratch split.
 - A cache hit is not a run. A piped gate reports the pipe's exit code.
 - A safety test that has never gone red is a hypothesis. Show it failing first.
 - Delete config you cannot prove is load-bearing. A line that looks necessary and isn't is how the next person concludes the wrong thing.
